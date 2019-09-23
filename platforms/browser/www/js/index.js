@@ -54,8 +54,8 @@ function getResults() {
     div.style.padding = '3px'
     div.style.margin = '5px auto';
     div.appendChild(document.createTextNode('Check all inputs!'));
-    const container = document.getElementById('form-body');
-    const form = document.getElementById('myForm');
+    const container = document.getElementById('alert-body');
+    const form = document.getElementById('myAlert');
     container.insertBefore(div, form);
 
     // document.getElementById('alarm').style.display = 'block';
