@@ -54,11 +54,17 @@
 	border-bottom-right-radius: 3px;
 	font-size: 10px;
 	position: absolute;
-	right: -150px;
+	right: -80px;
 	top: -1px;
 	cursor: pointer;
 }
 
 .title {
 	position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
