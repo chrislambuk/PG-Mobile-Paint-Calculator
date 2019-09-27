@@ -17,308 +17,326 @@
 </head>
 
 <body>
-  <nav class="nav navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <div class="title">
-        <span class="navbar-brand mx-auto">Paint Calculator</span>
-        <a id="helpBtn" data-toggle="modal" data-target="#exampleModal">
-          Help
-        </a>
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-1">
+            <h4 class="text-white">Info</h4>
+            <small class="text-white">Enter the width and heigh dimensions for the walls. If you have doors and windows
+              which don't need painting include those. The total will be the wall areas minus the windows and doors. All
+              measeurements should be in metres.<br>
+              Coverage information can be obtained form the manufacturer or the paint tin.</small>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-  <div class="container">
-    <div class="row text-center justify-content-md-center mt-5">
-      <div class="col-md-8 col-lg-6">
-        <div>
-          <div class="p-1">
-            <!--  WALLS -->
-            <h5 class="col s12 text-center">Walls</h5>
-            <small>All measurements in metres</small>
-            <form id="myForm">
-            <div class="row align-items-center">
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" id="height" class="form-control height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center ml-5">
+          <strong>Paint Calculator</strong>
+        </a>
+        <button id="helpBtn" class="navbar-toggler ml-2" type="button" data-toggle="collapse"
+          data-target="#navbarHeader">help
+        </button>
+      </div>
+    </div>
+  </header>
 
-              <!-- WINDOWS AND DOORS -->
-              <h5 class="col-12 text-center mt-3">Doors & Windows</h5>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
+  <main>
+    <div class="container">
+      <div class="row text-center justify-content-md-center">
+        <div class="col-md-8 col-lg-6">
+          <div>
+            <div class="p-1">
+              <!--  WALLS -->
+              <h5 class="col s12 text-center">Walls</h5>
+              <small>All measurements in metres</small>
+              <form id="myForm">
+                <div class="row align-items-center">
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" id="height" class="form-control height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
                   </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+
+                  <!-- WINDOWS AND DOORS -->
+                  <h5 class="col-12 text-center mt-3">Doors & Windows</h5>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control win-height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control win-width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control win-height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control  win-width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control win-height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control  win-width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control win-height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control win-width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Height</div>
+                      </div>
+                      <input type="number" class="form-control win-height">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 p-1">
+                    <div class="input-group input-group-sm">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Width</div>
+                      </div>
+                      <input type="number" class="form-control  win-width">
+                      <div class="input-group-append">
+                        <div class="input-group-text">m</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control  win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control  win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control  win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-            <!-- COVERAGE INFO -->
-            <hr>
-            <div class="row">
-              <div class='col-s-6 mx-auto'>
-                <div class="card">
-                  <div>
-                    <h5 class='card-header'>Paint Info</h5>
-                    <div class='card-body bg-dark'>
-                      <div>
-                        <div class="input-group input-group-sm">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text">Coverage</div>
-                          </div>
-                          <input type="number" class="form-control" id="pCover">
-                          <div class="input-group-append">
-                            <span class="input-group-text">m<sup>2</sup>/ l</span>
+              </form>
+              <!-- COVERAGE INFO -->
+              <hr>
+              <div class="row">
+                <div class='col-s-6 mx-auto'>
+                  <div class="card">
+                    <div>
+                      <h5 class='card-header'>Paint Info</h5>
+                      <div class='card-body bg-dark'>
+                        <div>
+                          <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">Coverage</div>
+                            </div>
+                            <input type="number" class="form-control" id="pCover">
+                            <div class="input-group-append">
+                              <span class="input-group-text">m<sup>2</sup>/ l</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div>
-                        <div class="input-group input-group-sm my-2">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text">Coats</div>
+                        <div>
+                          <div class="input-group input-group-sm my-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">Coats</div>
+                            </div>
+                            <select class="custom-select" id="pCoats">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                            </select>
                           </div>
-                          <select class="custom-select" id="pCoats">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                          </select>
                         </div>
-                      </div>
-                      <div id="alert-body">
-                        <div id="myAlert">
+                        <div id="alert-body">
+                          <div id="myAlert">
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- buttons -->
-            <div class='col my-2'>
+              <!-- buttons -->
+              <div class='col my-2'>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <footer class="footer">
     <div class="container">
