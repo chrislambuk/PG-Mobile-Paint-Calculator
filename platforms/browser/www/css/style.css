@@ -44,15 +44,15 @@
 	float: right;
 }
 
-#helpBtn {
-	text-align: center;
-	color: red;
-	height: 18px;
-	width: 40px;
-	padding: 1px;
-	font-size: 10px;
-	cursor: pointer;
-	margin-top: -20px;
+#helpBtn{
+  font-size: 1rem;
+  color: red;
+  height: 20px;
+  width: 40px;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+
 }
 
 .title {
