@@ -8,6 +8,9 @@
         Chris lamb
     </author>
     <content src="index.html" />
+    <feature name="StatusBar">
+            <param name="ios-package" value="CDVStatusBar" onload="true" />
+        </feature>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
