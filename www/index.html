@@ -19,37 +19,24 @@
 
 <body>
   <header>
-    <div class="collapse bg-dark" id="navbarHeader">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-md-7 py-1">
-            <h4 class="text-white">Info</h4>
-            <small class="text-white">Enter the width and heigh dimensions for the walls. If you have doors and windows
-              which don't need painting include those. The total will be the wall areas minus the windows and doors. All
-              measeurements should be in metres.<br>
-              Coverage information can be obtained form the manufacturer or the paint tin.</small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top pt-4">
       <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand d-flex align-items-center ml-5">
-          <strong>Paint Calculator</strong>
+        <a href="#" class="navbar-brand d-flex align-items-center ml-4">
+          <h5>Paint Calculator</h5>
         </a>
-        <button id="helpBtn" class="navbar-toggler ml-2" type="button" data-toggle="collapse"
-          data-target="#navbarHeader">help
+        <button id="helpBtn" class="navbar-toggler ml-2" type="button" data-toggle="modal"
+          data-target="#helpModal">help
         </button>
       </div>
     </div>
   </header>
 
   <main>
-    <div class="container">
+    <div class="container mt-4">
       <div class="row text-center justify-content-md-center">
         <div class="col-md-8 col-lg-6">
           <div>
-            <div class="p-1">
+            <div class="p-1 mt-5">
               <!--  WALLS -->
               <h5 class="col s12 text-center">Walls</h5>
               <small>All measurements in metres</small>
@@ -363,7 +350,7 @@
 
 
   <!-- HELP MODAL -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -374,9 +361,15 @@
           </button>
         </div>
         <div class="modal-body">
-          Please enter the dimensions of the walls to be painted. Window and door dimensions will be deducted from the
-          total area. Paint coverage info can be
-          obtained from the maufacturer or the paint container. All measurements are in metres.
+          Enter the width and height measurements for the walls. If you have doors and windows add those dimensions too. All
+              measurements should be in metres.<br>
+              Paint coverage information can be obtained form the manufacturer or the paint container. As a guide 14m<sup>2</sup>/ l is a good start.
+              <hr>
+              <div class="text-center">
+                <a href="https://arqmedia.co.uk/paint-calc/"><small>More Info</small></a> |
+              <a href="https://arqmedia.co.uk/privacy-policy/"><small>Privacy Policy</small></a> |
+              <a href="https://arqmedia.co.uk/tcs/"><small>T&Cs</small></a>
+              </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
