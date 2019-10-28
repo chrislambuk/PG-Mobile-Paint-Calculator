@@ -52,7 +52,8 @@
   padding: 0;
   position: absolute;
   right: 10px;
-
+top: 40px;
+border: none;
 }
 
 .title {

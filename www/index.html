@@ -7,7 +7,8 @@
   <meta name="msapplication-tap-highlight" content="no" />
   <!-- <meta name="viewport"
     content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" /> -->
-    <meta name="viewport" content="viewport-fit=cover, initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+  <meta name="viewport"
+    content="viewport-fit=cover, initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
   <meta http-equiv="Content-Security-Policy"
     content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: *" />
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -19,13 +20,12 @@
 
 <body>
   <header>
-    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top pt-4">
+    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top pt-3">
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center ml-4">
           <h5>Paint Calculator</h5>
         </a>
-        <button id="helpBtn" class="navbar-toggler ml-2" type="button" data-toggle="modal"
-          data-target="#helpModal">help
+        <button id="helpBtn" class="navbar-toggler ml-2" type="button" data-toggle="modal" data-target="#helpModal">help
         </button>
       </div>
     </div>
@@ -277,8 +277,7 @@
                 </div>
               </form>
               <!-- COVERAGE INFO -->
-              <hr>
-              <div class="row">
+              <div class="row mb-5">
                 <div class='col-s-6 mx-auto'>
                   <div class="card">
                     <div>
@@ -317,7 +316,7 @@
                 </div>
               </div>
               <!-- buttons -->
-              <div class='col my-2'>
+              <div class='col'>
               </div>
             </div>
           </div>
@@ -328,9 +327,8 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="row mx-3">
+      <div class="row mx-1">
         <button href="#" id="submitBtn" class="col btn btn-primary btn-sm mx-1">Calculate</button>
-
         <button href="#" id="clearBtn" class="col btn btn-secondary btn-sm mx-1">Clear</button>
       </div>
   </footer>
@@ -361,15 +359,17 @@
           </button>
         </div>
         <div class="modal-body">
-          Enter the width and height measurements for the walls. If you have doors and windows add those dimensions too. All
-              measurements should be in metres.<br>
-              Paint coverage information can be obtained form the manufacturer or the paint container. As a guide 14m<sup>2</sup>/ l is a good start.
-              <hr>
-              <div class="text-center">
-                <a href="https://arqmedia.co.uk/paint-calc/"><small>More Info</small></a> |
-              <a href="https://arqmedia.co.uk/privacy-policy/"><small>Privacy Policy</small></a> |
-              <a href="https://arqmedia.co.uk/tcs/"><small>T&Cs</small></a>
-              </div>
+          Enter the width and height measurements for the walls. If you have doors and windows add those dimensions too.
+          All
+          measurements should be in metres.<br>
+          Paint coverage information can be obtained form the manufacturer or the paint container. As a guide
+          14m<sup>2</sup>/ l is a good start.
+          <hr>
+          <div class="text-center">
+            <a href="https://arqmedia.co.uk/paint-calc/"><small>More Info</small></a> |
+            <a href="https://arqmedia.co.uk/privacy-policy/"><small>Privacy Policy</small></a> |
+            <a href="https://arqmedia.co.uk/tcs/"><small>T&Cs</small></a>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
