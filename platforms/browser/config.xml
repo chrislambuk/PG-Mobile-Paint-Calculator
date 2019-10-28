@@ -6,7 +6,7 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>Paint Calculator</name>
+    <name>Paint Calc</name>
     <description>
         An app to calculate the paint required for decorating.
     </description>
