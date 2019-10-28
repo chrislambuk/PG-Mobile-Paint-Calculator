@@ -18,7 +18,7 @@
   <title>Paint Calculator</title>
 </head>
 
-<body>
+<body class="bg-light">
   <header>
     <div class="navbar navbar-dark bg-dark shadow-sm fixed-top pt-3">
       <div class="container d-flex justify-content-between">
@@ -30,16 +30,16 @@
       </div>
     </div>
   </header>
-
+  
   <main>
-    <div class="container mt-4">
+    <div class="container mt-4 bg-light">
       <div class="row text-center justify-content-md-center">
         <div class="col-md-8 col-lg-6">
           <div>
             <div class="p-1 mt-5">
               <!--  WALLS -->
               <h5 class="col s12 text-center">Walls</h5>
-              <small>All measurements in metres</small>
+              <!-- <small>All measurements in metres</small> -->
               <form id="myForm">
                 <div class="row align-items-center">
                   <div class="col-6 p-1">
@@ -277,12 +277,12 @@
                 </div>
               </form>
               <!-- COVERAGE INFO -->
-              <div class="row mb-5">
+              <div class="row my-3">
                 <div class='col-s-6 mx-auto'>
                   <div class="card">
                     <div>
-                      <h5 class='card-header'>Paint Info</h5>
-                      <div class='card-body bg-dark'>
+                      <h5 class='card-header bg-white'>Paint Info</h5>
+                      <div class='card-body bg-warning'>
                         <div>
                           <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
@@ -326,10 +326,10 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <div class="row mx-1">
-        <button href="#" id="submitBtn" class="col btn btn-primary btn-sm mx-1">Calculate</button>
-        <button href="#" id="clearBtn" class="col btn btn-secondary btn-sm mx-1">Clear</button>
+    <div class="container bg-primary">
+      <div class="row">
+        <button href="#" id="submitBtn" class="col btn btn-primary btn-sm">Calculate</button>
+        <button href="#" id="clearBtn" class="col btn btn-secondary btn-sm">Clear</button>
       </div>
   </footer>
 
