@@ -18,9 +18,9 @@
   <title>Paint Calculator</title>
 </head>
 
-<body>
+<body class="bg-light">
   <header>
-    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top pt-3">
+    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top pt-4">
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center ml-4">
           <h5>Paint Calculator</h5>
@@ -32,14 +32,54 @@
   </header>
 
   <main>
-    <div class="container mt-4">
+    <div class="container pt-5 bg-light">
       <div class="row text-center justify-content-md-center">
-        <div class="col-md-8 col-lg-6">
+        <div class="col-md-8">
           <div>
-            <div class="p-1 mt-5">
+            <!-- COVERAGE INFO -->
+            <div class="row mt-5">
+              <div class='col-8 mx-auto'>
+                <div class="card">
+                  <div>
+                    <h5 class='card-header bg-white'>Paint Info</h5>
+                    <div class='card-body bg-warning'>
+                      <div>
+                        <div class="input-group input-group-sm">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">Coverage</div>
+                          </div>
+                          <input type="number" class="form-control" id="pCover">
+                          <div class="input-group-append">
+                            <span class="input-group-text">m<sup>2</sup>/litre</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="input-group input-group-sm my-2">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">Coats</div>
+                          </div>
+                          <select class="custom-select" id="pCoats">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div id="alert-body">
+                        <div id="myAlert">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="p-1">
               <!--  WALLS -->
               <h5 class="col s12 text-center">Walls</h5>
-              <small>All measurements in metres</small>
+              <!-- <small>All measurements in metres</small> -->
               <form id="myForm">
                 <div class="row align-items-center">
                   <div class="col-6 p-1">
@@ -276,45 +316,7 @@
                   </div>
                 </div>
               </form>
-              <!-- COVERAGE INFO -->
-              <div class="row mb-5">
-                <div class='col-s-6 mx-auto'>
-                  <div class="card">
-                    <div>
-                      <h5 class='card-header'>Paint Info</h5>
-                      <div class='card-body bg-dark'>
-                        <div>
-                          <div class="input-group input-group-sm">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">Coverage</div>
-                            </div>
-                            <input type="number" class="form-control" id="pCover">
-                            <div class="input-group-append">
-                              <span class="input-group-text">m<sup>2</sup>/ l</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="input-group input-group-sm my-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">Coats</div>
-                            </div>
-                            <select class="custom-select" id="pCoats">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div id="alert-body">
-                          <div id="myAlert">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
               <!-- buttons -->
               <div class='col'>
               </div>
@@ -326,10 +328,10 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <div class="row mx-1">
-        <button href="#" id="submitBtn" class="col btn btn-primary btn-sm mx-1">Calculate</button>
-        <button href="#" id="clearBtn" class="col btn btn-secondary btn-sm mx-1">Clear</button>
+    <div class="container bg-primary">
+      <div class="row">
+        <button href="#" id="submitBtn" class="col btn btn-primary btn-sm py-2">Calculate</button>
+        <button href="#" id="clearBtn" class="col btn btn-secondary btn-sm py-2">Clear</button>
       </div>
   </footer>
 
@@ -337,7 +339,7 @@
   <div id="resultArea" class='text-center'>
     <div id="results">
       <div id="modalHeader">
-        <h5>You need:<span id="closeBtn">&times;</span></h5>
+        <h5>YOU NEED<span id="closeBtn">&times;</span></h5>
       </div>
       <div id="modal-body">
         <h1 id="endResult">0</h1>
