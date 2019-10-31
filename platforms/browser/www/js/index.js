@@ -52,7 +52,7 @@ function onDeviceReady() {
 			}
 		} else {
 			const div = document.createElement('div');
-			div.className = 'alert alert-danger';
+			div.className = 'alert alert-danger text-center';
 			div.id = 'alert';
 			div.style.width = '80%';
 			div.style.padding = '3px';

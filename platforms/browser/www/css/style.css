@@ -1,7 +1,6 @@
-/* button {
-	display: flexbox;
-	justify-content: space-around;
-} */
+body{
+	margin-top: 80px
+}
 
 #resultArea {
 	display: none;
