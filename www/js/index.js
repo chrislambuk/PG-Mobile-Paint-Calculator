@@ -46,9 +46,9 @@ function onDeviceReady() {
 			document.getElementById('resultArea').style.display = 'block';
 			document.getElementById('endResult').innerText = finalTotal;
 			if (finalTotal == 1) {
-				document.getElementById('footer').innerHTML = 'Litre';
+				document.getElementById('footer').innerHTML = 'litre';
 			} else {
-				document.getElementById('footer').innerHTML = 'Litres';
+				document.getElementById('footer').innerHTML = 'litres';
 			}
 		} else {
 			const div = document.createElement('div');
@@ -57,7 +57,7 @@ function onDeviceReady() {
 			div.style.width = '80%';
 			div.style.padding = '3px';
 			div.style.margin = '5px auto';
-			div.appendChild(document.createTextNode('Check all inputs!'));
+			div.appendChild(document.createTextNode('INPUT DATA!'));
 			const container = document.getElementById('alert-body');
 			const form = document.getElementById('myAlert');
 			container.insertBefore(div, form);

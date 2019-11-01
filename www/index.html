@@ -20,9 +20,9 @@
 
 <body class="bg-light">
   <header>
-    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top pt-4">
-      <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand d-flex align-items-center ml-4">
+    <div class="navbar navbar-dark bg-dark fixed-top pt-4">
+      <div class="container">
+        <a href="#" class="navbar-brand mx-auto">
           <h5>Paint Calculator</h5>
         </a>
         <button id="helpBtn" class="navbar-toggler ml-2" type="button" data-toggle="modal" data-target="#helpModal">help
@@ -33,10 +33,10 @@
 
   <main>
     <div class="container">
-      <div class="col-md-8 mx-auto">
+      <div class="mx-auto">
         <!-- COVERAGE INFO -->
         <div class="card mb-3">
-          <div class="card-header text-center bg-white">
+          <div class="text-center bg-white mx-auto pt-2">
             <h5>Paint Info</h5>
           </div>
           <div class='card-body bg-warning'>
@@ -65,12 +65,9 @@
             </div>
           </div>
         </div>
-        <div class='col-12 mx-auto'>
+        <div class='col-12 mx-auto text-center'>
           <!--  WALLS -->
-          <div class="col-12 text-center">
-            <h4>+ Walls</h4>
-            <small>To paint</small>
-          </div>
+          <h5><span class='float-left'>+</span>Walls<span class='float-right'>+</span></h5>
           <form id="myForm">
             <div class="row align-items-center">
               <div class="col-6 p-1">
@@ -187,12 +184,12 @@
                   </div>
                 </div>
               </div>
-              <!--  -->
-              <hr>
+              <!--  WALLS END -->
+
               <!-- WINDOWS AND DOORS -->
-              <div class="col-12 text-center mt-2">
-                <h4>- Doors/Windows</h4>
-                <small>Don't paint</small>
+              <div class="col-12 text-center my-2">
+                <hr>
+                <h5><span class='float-left'>-</span>Doors/Windows<span class='float-right'>-</span></h5>
               </div>
               <div class="col-6 p-1">
                 <div class="input-group input-group-sm">
@@ -318,8 +315,8 @@
   <footer class="footer">
     <div class="container bg-primary">
       <div class="row">
-        <button href="#" id="submitBtn" class="col btn btn-primary btn-sm py-2">Calculate</button>
-        <button href="#" id="clearBtn" class="col btn btn-secondary btn-sm py-2">Clear</button>
+        <button href="#" id="submitBtn" class="col btn btn-primary btn-sm">Calculate</button>
+        <button href="#" id="clearBtn" class="col btn btn-secondary btn-sm">Clear</button>
       </div>
   </footer>
 
@@ -349,15 +346,16 @@
           </button>
         </div>
         <div class="modal-body">
-          <small>
-            This app is designed to calculate the paint required for painting walls.
-            It will total the areas, deduct windows/doors &amp; advise the amount in litres you need. <br>
-            Enter the width and height of the walls to be painted. <br>
-            If you have doors and windows which are not to be painted add those dimensions. <br>
-            All measurements should be in metres.<br>
-            Paint coverage information can be obtained from the manufacturer or the paint container but
-            14m<sup>2</sup>/litre is average. <br>
-            Please use the results as a guide and confirm quantities with your supplier before purchasing.</small>
+          Paint Calc is designed to calculate the amount of paint required for painting walls.
+          It will deduct any windows/doors measurements you input.
+          <ol>
+            <li>Input <strong>Width</strong> and <strong>Height</strong> measurement for each wall.</li>
+            <li>Input each window/door measurements.</li>
+            <li>Click calculate.</li>
+          </ol>
+          <small>All measurements should be in metres.</small>
+          <small>Paint coverage information can be obtained from the manufacturer or the paint container.
+          This is a estimate. Please confirm quantities with your supplier before purchasing.</small>
           <div class="text-center">
             <a href="https://arqmedia.co.uk/paint-calc/"><small>Info</small></a> |
             <a href="https://arqmedia.co.uk/privacy-policy/"><small>Privacy Policy</small></a> |

@@ -9,22 +9,11 @@ body {
   z-index: 0;
 }
 .footer {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   bottom: 0;
   width: 100%;
-  height:39px; /* Set the fixed height of the footer here */
+  height:30px; /* Set the fixed height of the footer here */
   line-height: 40px; /* Vertically center the text there */
   /* background-color: #f5f5f5; */
-}
-
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-.container {
-  width: auto;
-  max-width: 680px;
-  padding: 0 15px;
 }
