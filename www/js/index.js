@@ -57,7 +57,7 @@ function onDeviceReady() {
 			div.style.width = '80%';
 			div.style.padding = '3px';
 			div.style.margin = '5px auto';
-			div.appendChild(document.createTextNode('INPUT DATA!'));
+			div.appendChild(document.createTextNode('Input All Data'));
 			const container = document.getElementById('alert-body');
 			const form = document.getElementById('myAlert');
 			container.insertBefore(div, form);
@@ -78,20 +78,23 @@ function onDeviceReady() {
 		return sum;
 	}
 
-	document.getElementById('closeBtn').addEventListener('click', closeResult);
+	// document.getElementById('closeBtn').addEventListener('click', closeResult);
 	window.addEventListener('click', outsideClick);
 
 	function closeResult() {
 		document.getElementById('resultArea').style.display = 'none';
 	}
+
+
 	// Close If Outside Click
 	function outsideClick(e) {
 		if (e.target == resultArea) {
 			resultArea.style.display = 'none';
 		}
 	}
-	// clear button
 
+
+	// clear button
 	let clearBtn = document.getElementById('clearBtn');
 	clearBtn.addEventListener('click', function() {
 		document.getElementById('myForm').reset();
