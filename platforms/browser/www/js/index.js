@@ -2,6 +2,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
 	// EVENT LISTENER FOR CALC
+	
 	const calcBtn = document
 		.getElementById('submitBtn')
 		.addEventListener('click', getResults);

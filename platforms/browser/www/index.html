@@ -15,6 +15,14 @@
   <link rel="stylesheet" href="css/sticky-footer.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript">
+    $(window).on('load',function(){
+        $('#helpModal').modal('show');
+    });
+</script>
   <title>Paint Calculator</title>
 </head>
 
@@ -374,9 +382,6 @@
 
 
   <script type="text/javascript" src="cordova.js"></script>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
   <script>
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').trigger('focus')
