@@ -2,10 +2,8 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
 	// EVENT LISTENER FOR CALC
-	
-	const calcBtn = document
-		.getElementById('submitBtn')
-		.addEventListener('click', getResults);
+
+	document.getElementById('submitBtn').addEventListener('click', getResults);
 
 	// FUNCTIONS
 
@@ -27,50 +25,38 @@ function onDeviceReady() {
 			let wallTotals = inputSum(hValArr) * inputSum(wValArr);
 
 			// get the total for windows and doors height
-			let hWInValue = document.querySelectorAll('.win-height');
-			let hWinValArr = Array.from(hWInValue);
+			let hWinValue = document.querySelectorAll('.win-height');
+			let hWinValArr = Array.from(hWinValue);
 
 			// get the total for windows and doors widths
-			let wWInValue = document.querySelectorAll('.win-width');
-			let wWinValArr = Array.from(wWInValue);
+			let wWinValue = document.querySelectorAll('.win-width');
+			let wWinValArr = Array.from(wWinValue);
 
 			// WINDOW TOTALS
 
 			let windowTotals = inputSum(hWinValArr) * inputSum(wWinValArr);
-
 			let pCover = parseInt(document.getElementById('pCover').value);
 			let pCoats = parseInt(document.getElementById('pCoats').value);
-
 			let pCoverage = pCover / pCoats;
-
 			let finalTotal = Math.ceil((wallTotals - windowTotals) / pCoverage);
-			document.getElementById('resultArea').style.display = 'block';
-			document.getElementById('endResult').innerText = finalTotal;
+
+			document.getElementById('resMod').innerHTML = `<h1>${finalTotal}</h1>`;
+
 			if (finalTotal == 1) {
-				document.getElementById('footer').innerHTML = 'litre';
+				document.getElementById('footer').innerText = 'LITRE';
 			} else {
-				document.getElementById('footer').innerHTML = 'litres';
+				document.getElementById('footer').innerText = 'LITRES';
 			}
 		} else {
-			const div = document.createElement('div');
-			div.className = 'alert alert-danger text-center';
-			div.id = 'alert';
-			div.style.width = '80%';
-			div.style.padding = '3px';
-			div.style.margin = '5px auto';
-			div.appendChild(document.createTextNode('Input All Data'));
-			const container = document.getElementById('alert-body');
-			const form = document.getElementById('myAlert');
-			container.insertBefore(div, form);
-
-			// document.getElementById('alarm').style.display = 'block';
-			setTimeout(() => {
-				document.getElementById('alert').remove();
-			}, 3000);
+			document.getElementById('resMod').innerHTML = `	
+			<div class='text-danger'>Please enter measurements!</div>
+			`;
+			document.getElementById('footer').style.fontWeight = 'lighter';
+			document.getElementById('footer').innerText = 'See "help" for more info';
 		}
 	}
 
-	// 2. add up all the areas
+	// add up all the areas
 	function inputSum(valArr) {
 		let sum = 0;
 		valArr.forEach(function(arr) {
@@ -79,26 +65,9 @@ function onDeviceReady() {
 		return sum;
 	}
 
-	// document.getElementById('closeBtn').addEventListener('click', closeResult);
-	window.addEventListener('click', outsideClick);
-
-	function closeResult() {
-		document.getElementById('resultArea').style.display = 'none';
-	}
-
-
-	// Close If Outside Click
-	function outsideClick(e) {
-		if (e.target == resultArea) {
-			resultArea.style.display = 'none';
-		}
-	}
-
-
 	// clear button
 	let clearBtn = document.getElementById('clearBtn');
 	clearBtn.addEventListener('click', function() {
 		document.getElementById('myForm').reset();
-		document.getElementById('endResult').innerText = '0';
 	});
 }

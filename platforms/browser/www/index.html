@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/sticky-footer.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link rel="stylesheet" href="css/animate.min.css">
   <title>Paint Calculator</title>
 </head>
 
@@ -36,7 +37,7 @@
       <div class="mx-auto">
         <!-- COVERAGE INFO -->
         <div class="card mb-3">
-          <div class="text-center bg-white mx-auto pt-2">
+          <div class="card-header text-center bg-white">
             <h5>Paint Info</h5>
           </div>
           <div class='card-body bg-warning'>
@@ -315,24 +316,11 @@
   <footer class="footer">
     <div class="container text-center text-white">
       <div class="row">
-        <div href="#" id="submitBtn" class="col bg-primary">Calculate</div>
+        <div href="#" id="submitBtn" class="col bg-primary" data-toggle="modal" data-target="#resultModal">Calculate
+        </div>
         <div href="#" id="clearBtn" class="col bg-secondary">Clear</div>
       </div>
   </footer>
-
-  <!-- result modal -->
-  <div id="resultArea" class='text-center'>
-    <div id="results">
-      <div id="modalHeader">
-        <h5>YOU NEED</h5>
-      </div>
-      <div id="modal-body">
-        <h1 id="endResult">0</h1>
-      </div>
-      <div id="footer"></div>
-    </div>
-  </div>
-
 
   <!-- HELP MODAL -->
   <div class="modal fade" id="helpModal">
@@ -360,11 +348,37 @@
           <small>Paint coverage information can be obtained from the manufacturer or the paint container.
             This is an estimate. Please confirm quantities with your supplier before purchasing.</small>
           <br>
-          <br>
-          <div class="text-center">
+        </div>
+        <div class="modal-footer">
+          <div class="mr-auto">
             <a href="https://arqmedia.co.uk/paint-calc/"><small>Info</small></a> |
             <a href="https://arqmedia.co.uk/privacy-policy/"><small>Privacy Policy</small></a> |
             <a href="https://arqmedia.co.uk/tcs/"><small>T&Cs</small></a>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- RESULT MODAL -->
+  <div class="modal fade" id="resultModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">RESULT</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body col-8 mx-auto ">
+          <div class='card text-center'>
+            <div class="card-body bg-dark text-light">
+              <p id="resMod"></p>
+            </div>
+            <div class='card-footer bg-danger text-light py-1' id="footer">
+            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -373,6 +387,9 @@
       </div>
     </div>
   </div>
+
+
+
   <script type="text/javascript" src="cordova.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
