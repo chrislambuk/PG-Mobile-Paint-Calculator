@@ -49,7 +49,7 @@ function onDeviceReady() {
 			}
 		} else {
 			document.getElementById('resMod').innerHTML = `	
-			<h1 class='text-light'>O</h1>
+			<h1>O</h1>
 			`;
 			document.getElementById('footer').style.fontWeight = 'lighter';
 			document.getElementById('footer').innerText = 'NO DATA!';
