@@ -49,10 +49,10 @@ function onDeviceReady() {
 			}
 		} else {
 			document.getElementById('resMod').innerHTML = `	
-			<div class='text-danger'>Please enter measurements!</div>
+			<h1 class='text-light'>O</h1>
 			`;
 			document.getElementById('footer').style.fontWeight = 'lighter';
-			document.getElementById('footer').innerText = 'See "help" for more info';
+			document.getElementById('footer').innerText = 'NO DATA!';
 		}
 	}
 
