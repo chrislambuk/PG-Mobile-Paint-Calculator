@@ -374,7 +374,7 @@
             <div class="bg-white text-black">
               <p id="resMod"></p>
               <div class='bg-info text-light py-1' id="footer">
-            </div>
+              </div>
             </div>
           </div>
 
@@ -396,13 +396,13 @@
     $(window).on('load', function () {
       $('#helpModal').modal('show');
     });
-//     if ('ontouchstart' in window) {
-//     $(document).on('focus', 'textarea,input,select', function() {
-//         $('.navbar.navbar-fixed-top').css('position', 'absolute');
-//     }).on('blur', 'textarea,input,select', function() {
-//         $('.navbar.navbar-fixed-top').css('position', '');
-//     });
-// }
+    if ('ontouchstart' in window) {
+      $(document).on('focus', 'textarea,input,select', function () {
+        $('.navbar.navbar-fixed-top').css('position', 'absolute');
+      }).on('blur', 'textarea,input,select', function () {
+        $('.navbar.navbar-fixed-top').css('position', '');
+      });
+    }
   </script>
 </body>
 
