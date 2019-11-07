@@ -51,7 +51,7 @@ function onDeviceReady() {
 			document.getElementById('resMod').innerHTML = `	
 			<h1>O</h1>
 			`;
-			document.getElementById('footer').style.fontWeight = 'lighter';
+			// document.getElementById('footer').style.fontWeight = 'lighter';
 			document.getElementById('footer').innerText = 'NO DATA!';
 		}
 	}
