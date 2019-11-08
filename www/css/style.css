@@ -1,8 +1,6 @@
 body {
-	/* margin-top: 80px; */
+	margin-top: 80px;
 	cursor: pointer;
-	padding-top: constant(safe-area-inset-top);
-	padding-top: env(safe-area-inset-top);
 }
 
 a:focus,
@@ -35,6 +33,7 @@ input[type='number']::-webkit-outer-spin-button {
 	margin: 0;
 }
 
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -53,6 +52,5 @@ body {
 	height: 40px; /* Set the fixed height of the footer here */
 	line-height: 40px; /* Vertically center the text there */
 	/* background-color: #f5f5f5; */
-	margin-bottom: constant(safe-area-inset-bottom);
-	margin-bottom: env(safe-area-inset-bottom);
 }
+
