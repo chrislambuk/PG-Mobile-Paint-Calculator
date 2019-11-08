@@ -5,13 +5,17 @@
   <meta charset="utf-8" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="msapplication-tap-highlight" content="no" />
+  <!-- <meta name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" /> -->
   <meta name="viewport"
     content="viewport-fit=cover, initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
   <meta http-equiv="Content-Security-Policy"
     content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: *" />
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sticky-footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link rel="stylesheet" href="css/animate.min.css">
   <title>Paint Calculator</title>
 </head>
 
@@ -32,16 +36,16 @@
     <div class="container">
       <div class="mx-auto">
         <!-- COVERAGE INFO -->
-        <div class="card my-3">
-          <div class="card-header text-center bg-white">
+        <div class="card mb-3">
+          <div class="card-header text-center bg-white pb-0">
             <h5>Paint Info</h5>
           </div>
-          <div class='card-body bg-warning'>
+          <div class='card-body bg-warning p-2'>
             <div class="input-group input-group-sm">
               <div class="input-group-prepend">
                 <div class="input-group-text">Coverage</div>
               </div>
-              <input type="number" class="form-control" id="pCover">
+              <input type="text" inputmode="decimal" class="form-control" id="pCover" placeholder='...'>
               <div class="input-group-append">
                 <span class="input-group-text">m<sup>2</sup>/litre</span>
               </div>
@@ -56,6 +60,7 @@
                 <option value="3">3</option>
               </select>
             </div>
+
             <div id="alert-body">
               <div id="myAlert">
               </div>
@@ -64,15 +69,16 @@
         </div>
         <div class='col mx-auto text-center'>
           <!--  WALLS -->
-          <h5><span class='float-left'>+</span>Walls<span class='float-right'>+</span></h5>
+          <h5 class='py-0'><span class='float-left'>+</span>Walls<span class='float-right'>+</span></h5>
           <form id="myForm">
             <div class="row align-items-center">
+              <!-- 1 -->
               <div class="col-6 p-1">
                 <div class="input-group input-group-sm">
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" id="height" class="form-control height">
+                  <input type="text" inputmode="decimal" class="form-control height">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
@@ -83,19 +89,19 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="text" inputmode="decimal" class="form-control width">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
                 </div>
               </div>
-              <!--  -->
+              <!-- 2 -->
               <div class="col-6 p-1">
                 <div class="input-group input-group-sm">
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="text" inputmode="decimal" class="form-control height">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
@@ -106,19 +112,19 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="text" inputmode="decimal" class="form-control width">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
                 </div>
               </div>
-              <!--  -->
+              <!-- 3 -->
               <div class="col-6 p-1">
                 <div class="input-group input-group-sm">
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="text" inputmode="decimal" class="form-control height">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
@@ -129,19 +135,19 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="text" inputmode="decimal" class="form-control width">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
                 </div>
               </div>
-              <!--  -->
+              <!-- 4 -->
               <div class="col-6 p-1">
                 <div class="input-group input-group-sm">
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="text" inputmode="decimal" class="form-control height">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
@@ -152,19 +158,19 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="text" inputmode="decimal" class="form-control width">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
                 </div>
               </div>
-              <!--  -->
+              <!-- 5 -->
               <div class="col-6 p-1">
                 <div class="input-group input-group-sm">
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="text" inputmode="decimal" class="form-control height">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
@@ -175,7 +181,7 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="text" inputmode="decimal" class="form-control width">
                   <div class="input-group-append">
                     <div class="input-group-text">m</div>
                   </div>
@@ -184,124 +190,9 @@
               <!--  WALLS END -->
 
               <!-- WINDOWS AND DOORS -->
-              <div class="col-12 text-center my-2">
-                <hr>
-                <h5><span class='float-left'>-</span>Doors/Windows<span class='float-right'>-</span></h5>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control  win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control  win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Height</div>
-                  </div>
-                  <input type="number" class="form-control win-height">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="input-group input-group-sm">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Width</div>
-                  </div>
-                  <input type="number" class="form-control  win-width">
-                  <div class="input-group-append">
-                    <div class="input-group-text">m</div>
-                  </div>
-                </div>
-              </div>
+              <div class="btn btn-danger btn-sm btn-block mt-2" data-toggle="modal" data-target="#winModal"><span
+                  class="float-left">-</span>Windows/Doors<span class="float-right">-</span></div>
+
             </div>
           </form>
         </div>
@@ -336,7 +227,7 @@
           <small>
             <ol>
               <li>Input <strong>Width</strong> and <strong>Height</strong> measurement for each wall.</li>
-              <li>Input window or door measurements to deduct.</li>
+              <li>Input window or door measurements using the red button.</li>
               <li>Click calculate.</li>
             </ol>
           </small>
@@ -351,7 +242,7 @@
             <a href="https://arqmedia.co.uk/privacy-policy/"><small>Privacy Policy</small></a> |
             <a href="https://arqmedia.co.uk/tcs/"><small>T&Cs</small></a>
           </div>
-          <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-white btn-sm" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -369,22 +260,162 @@
           </button>
         </div>
         <div class="modal-body bg-light px-5">
-
+          <!--  -->
           <div class='text-center shadow-sm mx-5'>
             <div class="bg-white text-black">
               <p id="resMod"></p>
-<<<<<<< HEAD
-<<<<<<< HEAD
               <div class='bg-info text-light py-1' id="footer">
               </div>
-=======
-=======
->>>>>>> parent of 172fb16... v1.2
-              <div class='bg-primary text-light py-1' id="footer">
-            </div>
->>>>>>> parent of 172fb16... v1.2
             </div>
           </div>
+          <!--  -->
+        </div>
+        <div class="modal-footer bg-white py-2">
+          <button type="button" class="btn btn-white btn-block btn-sm" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WINDOWS MODAL -->
+  <div class="modal fade mt-5" id="winModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header py-2">
+          <h5 class="modal-title">EXCLUDE</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-dark px-4">
+          <form id="myForm2">
+            <!-- 1 -->
+            <div class="row">
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Height</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-height">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Width</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-width">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2 -->
+            <div class="row">
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Height</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-height">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Width</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-width">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div class="row">
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Height</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-height">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Width</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-width">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 4 -->
+            <div class="row">
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Height</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-height">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Width</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-width">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 5 -->
+            <div class="row">
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Height</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-height">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col p-1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Width</div>
+                  </div>
+                  <input type="text" inputmode="decimal" class="form-control win-width">
+                  <div class="input-group-append">
+                    <div class="input-group-text">m</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
 
         </div>
         <div class="modal-footer py-2">
@@ -401,16 +432,9 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script>
-    $(window).on('load', function () {
-      $('#helpModal').modal('show');
-    });
-    if ('ontouchstart' in window) {
-      $(document).on('focus', 'textarea,input,select', function () {
-        $('.navbar.navbar-fixed-top').css('position', 'absolute');
-      }).on('blur', 'textarea,input,select', function () {
-        $('.navbar.navbar-fixed-top').css('position', '');
-      });
-    }
+    // $(window).on('load', function () {
+    //   $('#helpModal').modal('show');
+    // });
   </script>
 </body>
 

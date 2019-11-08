@@ -10,7 +10,7 @@ function onDeviceReady() {
 	// 1. get results
 	function getResults() {
 		if (
-			document.querySelector('.height').value !== '' &&
+			document.querySelectorAll('.height').value !== '' &&
 			document.getElementById('pCover').value !== ''
 		) {
 			// get the totals for the wall heights
@@ -51,8 +51,11 @@ function onDeviceReady() {
 			document.getElementById('resMod').innerHTML = `	
 			<h1>O</h1>
 			`;
-			document.getElementById('footer').style.fontWeight = 'lighter';
-			document.getElementById('footer').innerText = 'NO DATA!';
+			if (document.getElementById('pCover') == ''&& document.querySelectorAll('.height').value == '') {
+				document.getElementById('footer').innerText = 'NO DATA!';
+			} else {
+				document.getElementById('footer').innerText = 'NO COVERAGE DATA!';
+			}
 		}
 	}
 
@@ -69,5 +72,6 @@ function onDeviceReady() {
 	let clearBtn = document.getElementById('clearBtn');
 	clearBtn.addEventListener('click', function() {
 		document.getElementById('myForm').reset();
+		document.getElementById('myForm2').reset();
 	});
 }
