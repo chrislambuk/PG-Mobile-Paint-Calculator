@@ -10,13 +10,7 @@
     </author>
     <content src="index.html" />
     <preference name="phonegap-version" value="cli-7.1.0" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
-    <plugin name="cordova-plugin-statusbar" source="npm" spec="2.4.3" />
     <platform name="ios">
-    <!-- <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#000000" />
-    <preference name="StatusBarStyle" value="lightcontent" /> -->
         <icon height="1024" platform="ios" src="www/res/icon/ios/icon.png" width="1024" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="www/res/icon/ios/icon-40.png" width="40" />
@@ -45,9 +39,6 @@
         <splash height="480" platform="ios" src="www/res/screen/ios/Default~iphone.png" width="320" />
     </platform>
     <access origin="*" />
-        <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#209dc2"/>
-    <preference name="StatusBarStyle" value="lightcontent" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
