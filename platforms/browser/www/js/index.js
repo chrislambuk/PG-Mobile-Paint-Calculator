@@ -73,5 +73,6 @@ function onDeviceReady() {
 	clearBtn.addEventListener('click', function() {
 		document.getElementById('myForm').reset();
 		document.getElementById('myForm2').reset();
+		document.getElementById('myForm3').reset();
 	});
 }
