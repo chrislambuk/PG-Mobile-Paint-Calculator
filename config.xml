@@ -11,11 +11,11 @@
     <preference name="phonegap-version" value="cli-7.1.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-    <!-- <preference name="StatusBarOverlaysWebView" value="true" />
+    <!-- <preference name="StatusBarOverlaysWebView" value="true" /> -->
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="StatusBarDefaultScrollToTop" value="false" />
-    <plugin name="cordova-plugin-statusbar" source="npm" spec="2.4.3" /> -->
+    <!-- <preference name="StatusBarDefaultScrollToTop" value="false" /> -->
+    <!-- <plugin name="cordova-plugin-statusbar" source="npm" spec="2.4.3" /> -->
     <platform name="ios">
         <icon height="1024" platform="ios" src="www/res/icon/ios/icon.png" width="1024" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
