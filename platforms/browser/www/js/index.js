@@ -49,7 +49,7 @@ function onDeviceReady() {
 			}
 		} else {
 			document.getElementById('resMod').innerHTML = `	
-			<h1>O</h1>
+			<h1></h1>
 			`;
 			if (document.getElementById('pCover') == ''&& document.querySelectorAll('.height').value == '') {
 				document.getElementById('footer').innerText = 'NO DATA!';
