@@ -20,7 +20,7 @@
 
 <body class="bg-light">
   <header>
-    <div id="myHeader" class="navbar navbar-dark bg-dark pt-4">
+    <div class="navbar navbar-dark bg-dark fixed-top pt-4">
       <div class="container">
         <a href="#" class="navbar-brand mx-auto pt-2">
           <h5>Paint Calc</h5>
@@ -210,7 +210,7 @@
   <div class="modal fade mt-5" id="helpModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header py-1">
+        <div class="modal-header py-2">
           <h5 class="modal-title" id="exampleModalLabel">How To Use</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -233,7 +233,7 @@
             This is an estimate. Please confirm quantities with your supplier before purchasing.</small>
           <br>
         </div>
-        <div class="modal-footer py-1">
+        <div class="modal-footer py-2">
           <div class="mx-auto">
             <a href="https://arqmedia.co.uk/paint-calc/"><small>Info</small></a> |
             <a href="https://arqmedia.co.uk/privacy-policy/"><small>Privacy Policy</small></a> |
@@ -431,8 +431,14 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script>
-    // $(window).on('load', function () {
-    //   $('#helpModal').modal('show');
+    $(window).on('load', function () {
+      $('#helpModal').modal('show');
+    });
+    // $(document).on('focus', 'select, input, textarea', function () {
+    //     $('#main-headerbar').css({'position': 'absolute', 'top': '0px' });
+    // });
+    // $(document).on('blur', 'select, input, textarea', function () {
+    //     $('#main-headerbar').css({ 'position': 'fixed' });
     // });
   </script>
 </body>

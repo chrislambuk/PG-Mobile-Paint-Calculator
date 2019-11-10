@@ -4,15 +4,9 @@ body {
 	}
 	
 main {
-	margin-top: 20px;
+	margin-top: 80px;
 	cursor: pointer;
 }
-
-#myheader{
-	position: fixed !important;
-	width:100%;
-	top: 0px;
- }
 
 a:focus,
 button:focus,
