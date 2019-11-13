@@ -16,7 +16,7 @@
     <!-- <preference name="StatusBarStyle" value="lightcontent" /> -->
     <!-- <plugin name="cordova-plugin-statusbar" spec="~2.4.3" /> -->
     <platform name="ios">
-            <edit-config file="*-Info.plist" target="UIStatusBarHidden" mode="merge">
+        <edit-config file="*-Info.plist" target="UIStatusBarHidden" mode="merge">
         <true/>
     </edit-config>
         <edit-config file="*-Info.plist" target="UIViewControllerBasedStatusBarAppearance" mode="merge">
