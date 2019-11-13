@@ -12,11 +12,12 @@
     <preference name="android-minSdkVersion" value="14" />
     <preference name="phonegap-version" value="cli-8.0.0" />
 <platform name="ios">
-    	<edit-config file="*-Info.plist" target="UIStatusBarHidden" mode="merge">
-	<true/>
+<edit-config file="*-Info.plist" mode="merge" target="UIStatusBarHidden">
+    <true />
 </edit-config>
-<edit-config file="*-Info.plist" target="UIViewControllerBasedStatusBarAppearance" mode="merge">
-	<false/>
+<edit-config file="*-Info.plist" mode="merge" target="UIViewControllerBasedStatusBarAppearance">
+    <false />
+</edit-config>
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="1024" platform="ios" src="www/res/icon/ios/icon-1024.png" width="1024" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
