@@ -8,14 +8,10 @@
         Chris lamb
     </author>
     <content src="index.html" />
-    <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#000000" />
-    <preference name="StatusBarStyle" value="lightcontent" />
-    <plugin name="cordova-plugin-statusbar" spec="~2.4.3" />
-    <platform name="ios">
+    <preference name="phonegap-version" value="cli-8.0.0" />
+<platform name="ios">
     	<edit-config file="*-Info.plist" target="UIStatusBarHidden" mode="merge">
 	<true/>
 </edit-config>
