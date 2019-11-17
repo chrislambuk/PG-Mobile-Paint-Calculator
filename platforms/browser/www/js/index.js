@@ -4,7 +4,8 @@ function onDeviceReady() {
 	// EVENT LISTENER FOR CALC
 
 	document.getElementById('submitBtn').addEventListener('click', getResults);
-
+	
+// document.querySelector('input[name="coats"]:checked').value
 	// FUNCTIONS
 
 	// 1. get results
@@ -36,7 +37,8 @@ function onDeviceReady() {
 
 			let windowTotals = inputSum(hWinValArr) * inputSum(wWinValArr);
 			let pCover = parseInt(document.getElementById('pCover').value);
-			let pCoats = parseInt(document.getElementById('pCoats').value);
+			// let pCoats = parseInt(document.getElementById('pCoats').value);
+			let pCoats = document.querySelector('input[name="coats"]:checked').value
 			let pCoverage = pCover / pCoats;
 			let finalTotal = Math.ceil((wallTotals - windowTotals) / pCoverage);
 
