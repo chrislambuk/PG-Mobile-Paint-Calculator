@@ -33,33 +33,51 @@
 
   <main>
     <div class="container">
+      <form action="">
+      <div id="unitSelect">
+
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="xFactor" id="metric" value="1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                Metric
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="xFactor" id="imperial" value="2">
+              <label class="form-check-label" for="exampleRadios2">
+                Imperial
+              </label>
+            </div>
+            
+          </div>
+        </form>
       <div class="mx-auto">
         <!-- COVERAGE INFO -->
         <div class="card mb-3">
           <div class="card-header text-center bg-white pb-0">
             <h5>Paint Info</h5>
           </div>
-          <div class='card-body bg-warning px-4'>
+          <div class='card-body bg-warning p-2'>
             <form id="myForm3">
-              <div class="input-group input-group-sm">
+              <div class="input-group input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">Coverage</div>
                 </div>
                 <input type="number" class="form-control" id="pCover" placeholder='...'>
                 <div class="input-group-append">
-                  <span class="input-group-text">m<sup>2</sup>/litre</span>
+                  <span id="covId" class="input-group-text">m<sup>2</sup>/litre</span>
                 </div>
               </div>
 
 
               <!-- radio buttons for coats -->
-              <div class="mt-4">
+              <div id="coats" class="mt-2">
 
-                <div class="form-check" style="display:flex;justify-content:space-between">
-                  <div style="flex:2">
-                    <h5>Coats:</h5>
+                <div id="coatsSelect" class="form-check">
+                  <div id="coatsLabel">
+                    Coats
                   </div>
-                  <div style="flex:1">
+                  <div class="coatsRadio">
                     <input class="form-check-input" type="radio" name="coats" id="exampleRadios1" value="1"
                       checked>
                     <label class="form-check-label" for="exampleRadios1">
@@ -67,14 +85,14 @@
                     </label>
                   </div>
   
-                  <div style="flex:1">
+                  <div class="coatsRadio">
                     <input class="form-check-input" type="radio" name="coats" id="exampleRadios2" value="2">
                     <label class="form-check-label" for="exampleRadios2">
                       2
                     </label>
                   </div>
   
-                  <div style="flex:1">
+                  <div class="coatsRadio">
                     <input class="form-check-input" type="radio" name="coats" id="exampleRadios3" value="3">
                     <label class="form-check-label" for="exampleRadios3">
                       3
@@ -116,7 +134,7 @@
                   </div>
                   <input type="number" class="form-control height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -127,7 +145,7 @@
                   </div>
                   <input type="number" class="form-control width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -139,7 +157,7 @@
                   </div>
                   <input type="number" class="form-control height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -150,7 +168,7 @@
                   </div>
                   <input type="number" class="form-control width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -162,7 +180,7 @@
                   </div>
                   <input type="number" class="form-control height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -173,7 +191,7 @@
                   </div>
                   <input type="number" class="form-control width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -185,7 +203,7 @@
                   </div>
                   <input type="number" class="form-control height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -196,7 +214,7 @@
                   </div>
                   <input type="number" class="form-control width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -208,7 +226,7 @@
                   </div>
                   <input type="number" class="form-control height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -219,7 +237,7 @@
                   </div>
                   <input type="number" class="form-control width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -337,7 +355,7 @@
                   </div>
                   <input type="number" class="form-control win-height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -348,7 +366,7 @@
                   </div>
                   <input type="number" class="form-control win-width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -362,7 +380,7 @@
                   </div>
                   <input type="number" class="form-control win-height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -373,7 +391,7 @@
                   </div>
                   <input type="number" class="form-control win-width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -387,7 +405,7 @@
                   </div>
                   <input type="number" class="form-control win-height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -398,7 +416,7 @@
                   </div>
                   <input type="number" class="form-control win-width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -412,7 +430,7 @@
                   </div>
                   <input type="number" class="form-control win-height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -423,7 +441,7 @@
                   </div>
                   <input type="number" class="form-control win-width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -437,7 +455,7 @@
                   </div>
                   <input type="number" class="form-control win-height">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -448,7 +466,7 @@
                   </div>
                   <input type="number" class="form-control win-width">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>

@@ -4,16 +4,38 @@ function onDeviceReady() {
 	// EVENT LISTENER FOR CALC
 
 	document.getElementById('submitBtn').addEventListener('click', getResults);
-	
-// document.querySelector('input[name="coats"]:checked').value
+
+	let units = document.querySelector('input[name="xFactor"]:checked').value;
+
+	document.getElementById('imperial').addEventListener('click', function(e) {
+		document.getElementById('covId').innerHTML = `ft<sup>2</sup>/gallon`;
+		let dimension = document.querySelectorAll('.dimension');
+		let dimArr = Array.from(dimension);
+		dimArr.forEach(function(dim) {
+			dim.innerText = 'ft';
+		});
+	});
+
+	document.getElementById('metric').addEventListener('click', function(e) {
+		document.getElementById('covId').innerHTML = `m<sup>2</sup>/litre`;
+		let dimension = document.querySelectorAll('.dimension');
+		let dimArr = Array.from(dimension);
+		dimArr.forEach(function(dim) {
+			dim.innerText = 'm';
+		});
+	});
+
+	// document.querySelector('input[name="coats"]:checked').value
 	// FUNCTIONS
 
 	// 1. get results
 	function getResults() {
-		if (
-			document.querySelectorAll('.height').value !== '' &&
-			document.getElementById('pCover').value !== ''
-		) {
+		let units = document.querySelector('input[name="xFactor"]:checked').value;
+		const resultFooter = document.getElementById('footer');
+		const height = document.querySelectorAll('.height').value;
+		const pCover = document.getElementById('pCover').value;
+
+		if (height !== '' && pCover !== '') {
 			// get the totals for the wall heights
 			let hValue = document.querySelectorAll('.height');
 			let hValArr = Array.from(hValue);
@@ -36,28 +58,48 @@ function onDeviceReady() {
 			// WINDOW TOTALS
 
 			let windowTotals = inputSum(hWinValArr) * inputSum(wWinValArr);
-			let pCover = parseInt(document.getElementById('pCover').value);
+			let pCoverInt = parseInt(pCover);
 			// let pCoats = parseInt(document.getElementById('pCoats').value);
-			let pCoats = document.querySelector('input[name="coats"]:checked').value
-			let pCoverage = pCover / pCoats;
+			let pCoats = document.querySelector('input[name="coats"]:checked').value;
+			let pCoverage = pCoverInt / pCoats;
 			let finalTotal = Math.ceil((wallTotals - windowTotals) / pCoverage);
 
 			document.getElementById('resMod').innerHTML = `<h1>${finalTotal}</h1>`;
 
-			if (finalTotal == 1) {
-				document.getElementById('footer').innerText = 'LITRE';
-			} else {
-				document.getElementById('footer').innerText = 'LITRES';
+			// (finalTotal == 1 && units == 1
+			// 	? (resultFooter.innerText = 'LITRE')
+			// 	: (resultFooter.innerText = 'LITRES'))
+			// (finalTotal == 1 && units == 2
+			// 		? (resultFooter.innerText = 'GALLON')
+			// 		: (resultFooter.innerText = 'GALLONS')
+			// );
+			let units = document.querySelector('input[name="xFactor"]:checked').value;
+			if (finalTotal == 1 && units == 1) {
+				resultFooter.innerText = 'LITRE';
+			} else if (finalTotal !== 1 && units == 1){
+				resultFooter.innerText = 'LITRES';
+			} else if (finalTotal == 1 && units == 2){
+				resultFooter.innerText = 'GALLON';
+			}else{
+				resultFooter.innerText = 'GALLONS';
 			}
 		} else {
 			document.getElementById('resMod').innerHTML = `	
 			<h1>0</h1>
 			`;
-			if (document.getElementById('pCover') == ''&& document.querySelectorAll('.height').value == '') {
-				document.getElementById('footer').innerText = 'NO DATA!';
-			} else {
-				document.getElementById('footer').innerText = 'NO COVERAGE DATA!';
-			}
+
+			pCover == '' && height == ''
+				? (resultFooter.innerText = 'NO DATA!')
+				: (resultFooter.innerText = 'NO COVERAGE DATA!');
+
+			// if (
+			// 	document.getElementById('pCover') == '' &&
+			// 	document.querySelectorAll('.height').value == ''
+			// ) {
+			// 	resultFooter.innerText = 'NO DATA!';
+			// } else {
+			// 	resultFooter.innerText = 'NO COVERAGE DATA!';
+			// }
 		}
 	}
 
