@@ -2,15 +2,13 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
 	// EVENT LISTENER FOR CALC
-
 	document.getElementById('submitBtn').addEventListener('click', getResults);
+	let dimension = document.querySelectorAll('.dimension');
+	let dimArr = Array.from(dimension);
 
-	let units = document.querySelector('input[name="xFactor"]:checked').value;
-
+	// let units = document.querySelector('input[name="xFactor"]:checked').value;
 	document.getElementById('imperial').addEventListener('click', function(e) {
 		document.getElementById('covId').innerHTML = `ft<sup>2</sup>/gallon`;
-		let dimension = document.querySelectorAll('.dimension');
-		let dimArr = Array.from(dimension);
 		dimArr.forEach(function(dim) {
 			dim.innerText = 'ft';
 		});
@@ -18,8 +16,6 @@ function onDeviceReady() {
 
 	document.getElementById('metric').addEventListener('click', function(e) {
 		document.getElementById('covId').innerHTML = `m<sup>2</sup>/litre`;
-		let dimension = document.querySelectorAll('.dimension');
-		let dimArr = Array.from(dimension);
 		dimArr.forEach(function(dim) {
 			dim.innerText = 'm';
 		});
@@ -66,21 +62,14 @@ function onDeviceReady() {
 
 			document.getElementById('resMod').innerHTML = `<h1>${finalTotal}</h1>`;
 
-			// (finalTotal == 1 && units == 1
-			// 	? (resultFooter.innerText = 'LITRE')
-			// 	: (resultFooter.innerText = 'LITRES'))
-			// (finalTotal == 1 && units == 2
-			// 		? (resultFooter.innerText = 'GALLON')
-			// 		: (resultFooter.innerText = 'GALLONS')
-			// );
 			let units = document.querySelector('input[name="xFactor"]:checked').value;
 			if (finalTotal == 1 && units == 1) {
 				resultFooter.innerText = 'LITRE';
-			} else if (finalTotal !== 1 && units == 1){
+			} else if (finalTotal !== 1 && units == 1) {
 				resultFooter.innerText = 'LITRES';
-			} else if (finalTotal == 1 && units == 2){
+			} else if (finalTotal == 1 && units == 2) {
 				resultFooter.innerText = 'GALLON';
-			}else{
+			} else {
 				resultFooter.innerText = 'GALLONS';
 			}
 		} else {
@@ -91,15 +80,6 @@ function onDeviceReady() {
 			pCover == '' && height == ''
 				? (resultFooter.innerText = 'NO DATA!')
 				: (resultFooter.innerText = 'NO COVERAGE DATA!');
-
-			// if (
-			// 	document.getElementById('pCover') == '' &&
-			// 	document.querySelectorAll('.height').value == ''
-			// ) {
-			// 	resultFooter.innerText = 'NO DATA!';
-			// } else {
-			// 	resultFooter.innerText = 'NO COVERAGE DATA!';
-			// }
 		}
 	}
 
@@ -118,5 +98,6 @@ function onDeviceReady() {
 		document.getElementById('myForm').reset();
 		document.getElementById('myForm2').reset();
 		document.getElementById('myForm3').reset();
+		document.getElementById('myForm4').reset();
 	});
 }
