@@ -4,7 +4,7 @@ body {
 }
 
 main {
-	margin-top: 80px;
+	/* margin-top: 80px; */
 	cursor: pointer;
 }
 
@@ -36,6 +36,12 @@ h1 {
 	display: flex;
 	justify-content: space-evenly;
 }
+#covId{
+	width:100px;
+}
+.dimension{
+	width: 35px;
+}
 
 #coats {
 	padding: 3px 0;
@@ -44,17 +50,17 @@ h1 {
 	background: white;
 }
 
-#coatsSelect{
-	display:flex;
-	justify-content:space-between;
-	align-items:center
+#coatsSelect {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-#coatsLabel{
+#coatsLabel {
 	flex: 2;
 }
 
-.coatsRadio{
+.coatsRadio {
 	flex: 1;
 }
 
@@ -68,9 +74,10 @@ input[type='number'] {
 	-moz-appearance: textfield;
 }
 
-#metric input[type='radio']:checked label {
-	color: yellow;
+
+#metric input[type='radio']:checked .input-group-text{
+	background: #E9ECEF;
 }
-#imperial input[type='radio']:checked label {
-	color: red;
+#imperial input[type='radio']:checked .input-group-text {
+	background: #424242
 }
