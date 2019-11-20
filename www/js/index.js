@@ -89,9 +89,10 @@ function onDeviceReady() {
 			let square = document.getElementById('square').innerText;
 			document.getElementById('area').innerHTML = `
 			<div class="pl-5">
-			<small><strong>SUMMARY</strong></small><br>
-			<small>AREA: ${total} sq-${square}</small><br>
-			<small>COATS: ${pCoats}</small>
+			<small>
+			PAINT AREA: <strong>${total} sq-${square}</strong><br>
+			PAINT COATS: <strong>${pCoats}</strong>
+			</small>
 			</div>
 			`;
 			document.getElementById('resMod').innerHTML = `<h1>${finalTotal}</h1>`;
