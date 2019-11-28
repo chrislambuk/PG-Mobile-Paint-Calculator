@@ -11,8 +11,6 @@ function onDeviceReady() {
 	// let units = document.querySelector('input[name="xFactor"]:checked').value;
 	document.getElementById('imperial').addEventListener('click', function(e) {
 		covId.innerHTML = `ft<sup>2</sup>/gallon`;
-		covId.style.background = '#CED4DA';
-		coverage.style.background = '#CED4DA';
 		dimArr.forEach(function(dim) {
 			dim.innerText = 'ft';
 		});
@@ -20,10 +18,6 @@ function onDeviceReady() {
 
 	document.getElementById('metric').addEventListener('click', function(e) {
 		covId.innerHTML = `m<sup>2</sup>/litre`;
-		covId.style.background = '#E9ECEF';
-		covId.style.color = '#495057';
-		coverage.style.background = '#E9ECEF';
-		coverage.style.color = '#495057';
 		dimArr.forEach(function(dim) {
 			dim.innerText = 'm';
 		});
