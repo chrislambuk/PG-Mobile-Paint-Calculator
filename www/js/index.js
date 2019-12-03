@@ -1,6 +1,15 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
+	// Set AdMobAds options:
+	admob.setOptions({
+		publisherId:          "ca-app-pub-3940256099942544/2934735716",  // Required
+		// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
+		tappxIdiOS:           "pub-50706-ios-8333",            // Optional
+		// tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+		tappxShare:           0.5                                        // Optional
+});
+admob.createBannerView();
 	// EVENT LISTENER FOR CALC
 	document.getElementById('submitBtn').addEventListener('click', getResults);
 	let dimension = document.querySelectorAll('.dimension');
@@ -11,8 +20,6 @@ function onDeviceReady() {
 	// let units = document.querySelector('input[name="xFactor"]:checked').value;
 	document.getElementById('imperial').addEventListener('click', function(e) {
 		covId.innerHTML = `ft<sup>2</sup>/gallon`;
-		covId.style.background = '#CED4DA';
-		coverage.style.background = '#CED4DA';
 		dimArr.forEach(function(dim) {
 			dim.innerText = 'ft';
 		});
