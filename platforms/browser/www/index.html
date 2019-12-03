@@ -255,21 +255,22 @@
           </button>
         </div>
         <div class="modal-body bg-light">
-          <small>Paint Calc is designed to calculate the amount of paint required for decorating.<br>
-            You can choose between metric (metres/litres) or imperial (feet/gallons).
+          <small>Use Paint Calc to calculate the amount of paint you will need.<br>
           </small>
-          <br>
           <br>
           <small>
             <ul>
-              <li>Measure the walls you are painting</li>
+              <li>
+  Choose between metric (metres & litres) or imperial (feet & gallons).
+              </li>
+              <li class="my-2">Measure the walls you are painting</li>
               <li class="my-2">Add windows and door measurements you aren’t painting by clicking on <button
                   class="btn btn-sm btn-danger py-0 px-1">Windows/Doors</button></li>
               <li>Click <button class="btn btn-sm btn-primary py-0 px-1">Calculate</button></li>
             </ul>
           </small>
-          <small>Paint coverage information can be obtained from the manufacturer or the paint container. either
-            m<sup>2</sup>/litre or ft<sup>2</sup>/gallon depending on your region. The result is an estimate. Please
+          <small>Paint coverage information can be obtained from the manufacturer or the paint container. Either
+            m<sup>2</sup>/litre or ft<sup>2</sup>/gallon depending on your region. The calculated result is an estimate so please
             confirm quantities with your supplier before purchasing.</small>
           <br>
         </div>
@@ -472,15 +473,9 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script>
-    // $(window).on('load', function () {
-    //   $('#helpModal').modal('show');
-    // });
-    // $(document).on('focus', 'select, input, textarea', function () {
-    //     $('#main-headerbar').css({'position': 'absolute', 'top': '0px' });
-    // });
-    // $(document).on('blur', 'select, input, textarea', function () {
-    //     $('#main-headerbar').css({ 'position': 'fixed' });
-    // });
+    $(window).on('load', function () {
+      $('#helpModal').modal('show');
+    });
   </script>
 </body>
 
