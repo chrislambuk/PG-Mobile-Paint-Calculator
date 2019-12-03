@@ -3,7 +3,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 	// Set AdMobAds options:
 	admob.setOptions({
-		publisherId:          "ca-app-pub-8816517022745547~1128143402",  // Required
+		publisherId:          "ca-app-pub-8816517022745547/1209512804",  // Required
 		// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
 		tappxIdiOS:           "pub-50706-ios-8333",            // Optional
 		// tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
