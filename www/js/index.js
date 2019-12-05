@@ -136,7 +136,8 @@ function onDeviceReady() {
 	});
 		// Set AdMobAds options:
 		admob.setOptions({
-			publisherId:          "ca-app-pub-8816517022745547/1209512804",  // Required
+			// publisherId:          "ca-app-pub-8816517022745547/1209512804",  // Required
+			publisherId:          "ca-app-pub-3940256099942544/2934735716",  // Required
 			// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
 			tappxIdiOS:           "pub-50706-ios-8333",            // Optional
 			// tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
