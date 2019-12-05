@@ -89,7 +89,7 @@ function onDeviceReady() {
 			document.getElementById('area').innerHTML = `
 			<div class="pl-5">
 			<small>
-			PAINT AREA: <strong>${total} sq-${square}</strong><br>
+			PAINT AREA: <strong>${total} ${square}<sup>2</sup></strong><br>
 			PAINT COATS: <strong>${pCoats}</strong>
 			</small>
 			</div>
