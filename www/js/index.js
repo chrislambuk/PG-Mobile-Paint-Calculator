@@ -1,7 +1,6 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-
 	// EVENT LISTENER FOR CALC
 	document.getElementById('submitBtn').addEventListener('click', getResults);
 	let dimension = document.querySelectorAll('.dimension');
@@ -89,7 +88,7 @@ function onDeviceReady() {
 			document.getElementById('area').innerHTML = `
 			<div class="pl-5">
 			<small>
-			PAINT AREA: <strong>${total} ${square}<sup>2</sup></strong><br>
+			PAINT AREA: <strong>${total}${square}<sup>2</sup></strong><br>
 			PAINT COATS: <strong>${pCoats}</strong>
 			</small>
 			</div>
@@ -134,14 +133,12 @@ function onDeviceReady() {
 		document.getElementById('myForm3').reset();
 		document.getElementById('myForm4').reset();
 	});
-		// Set AdMobAds options:
-		admob.setOptions({
-			// publisherId:          "ca-app-pub-8816517022745547/1209512804",  // Required
-			publisherId:          "ca-app-pub-3940256099942544/2934735716",  // Required
-			// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
-			tappxIdiOS:           "pub-50706-ios-8333",            // Optional
-			// tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
-			tappxShare:           0.5                                        // Optional
+	// Set AdMobAds options:
+	admob.setOptions({
+		publisherId: 'ca-app-pub-8816517022745547/1209512804', // Required
+		// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
+		tappxIdiOS: 'pub-50706-ios-8333', // Optional
+		tappxShare: 0.5 // Optional
 	});
 	admob.createBannerView();
 }
