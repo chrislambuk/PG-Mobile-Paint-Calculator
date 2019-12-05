@@ -1,15 +1,7 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-	// Set AdMobAds options:
-	admob.setOptions({
-		publisherId:          "ca-app-pub-8816517022745547/1209512804",  // Required
-		// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
-		tappxIdiOS:           "pub-50706-ios-8333",            // Optional
-		// tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
-		tappxShare:           0.5                                        // Optional
-});
-admob.createBannerView();
+
 	// EVENT LISTENER FOR CALC
 	document.getElementById('submitBtn').addEventListener('click', getResults);
 	let dimension = document.querySelectorAll('.dimension');
@@ -142,4 +134,13 @@ admob.createBannerView();
 		document.getElementById('myForm3').reset();
 		document.getElementById('myForm4').reset();
 	});
+		// Set AdMobAds options:
+		admob.setOptions({
+			publisherId:          "ca-app-pub-8816517022745547/1209512804",  // Required
+			// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
+			tappxIdiOS:           "pub-50706-ios-8333",            // Optional
+			// tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+			tappxShare:           0.5                                        // Optional
+	});
+	admob.createBannerView();
 }

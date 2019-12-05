@@ -19,11 +19,11 @@
 
 <body class="bg-light">
   <header>
-    <div class="navbar navbar-dark bg-dark pt-4">
+    <div class="navbar pt-4">
       <div class="container">
-        <a href="#" class="navbar-brand mx-auto pt-2">
+        <div href="#" class="navbar-brand mx-auto pt-2">
           <h5>Paint Calc</h5>
-        </a>
+        </div>
         <button id="helpBtn" class="navbar-toggler" type="button" data-toggle="modal" data-target="#helpModal">Help
         </button>
       </div>
@@ -32,75 +32,77 @@
 
   <main>
     <div class="container">
-      <form id="myForm4" class="py-1">
-        <div id="unitSelect">
-
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="xFactor" id="metric" value="1" checked>
-            <label class="form-check-label" for="exampleRadios1">
-              Metric
-            </label>
+      <!-- metric or imperial -->
+      <div class="card">
+        <form id="myForm4" class="my-1">
+          <div id="unitSelect">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="xFactor" id="metric" value="1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                Metric
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="xFactor" id="imperial" value="2">
+              <label class="form-check-label" for="exampleRadios2">
+                Imperial
+              </label>
+            </div>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="xFactor" id="imperial" value="2">
-            <label class="form-check-label" for="exampleRadios2">
-              Imperial
-            </label>
-          </div>
-
+        </form>
+      </div>
+      <!-- coverage info -->
+      <div class="card my-3">
+        <div class="card-header text-center bg-white pb-0">
+          <h5>Paint Info</h5>
         </div>
-      </form>
-      <div class="mx-auto">
-        <!-- COVERAGE INFO -->
-        <div class="card mb-3">
-          <div class="card-header text-center bg-white pb-0">
-            <h5>Paint Info</h5>
-          </div>
-          <div class='card-body bg-warning p-2' id="paintInfoBG">
-            <form id="myForm3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text" id="coverage">Coverage</div>
+        <div class='card-body bg-warning p-2' id="paintInfoBG">
+          <form id="myForm3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text" id="coverage">Coverage</div>
+              </div>
+              <input type="number" class="form-control" id="pCover" placeholder='...'>
+              <div class="input-group-append">
+                <span id="covId" class="input-group-text">m<sup>2</sup>/litre</span>
+              </div>
+            </div>
+
+
+            <!-- radio buttons for coats -->
+            <div id="coats" class="mt-2">
+
+              <div id="coatsSelect" class="form-check">
+                <div id="coatsLabel">
+                  Coats
                 </div>
-                <input type="number" class="form-control" id="pCover" placeholder='Enter info...'>
-                <div class="input-group-append">
-                  <span id="covId" class="input-group-text">m<sup>2</sup>/litre</span>
+                <div class="coatsRadio">
+                  <input class="form-check-input" type="radio" name="coats" id="exampleRadios1" value="1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    1
+                  </label>
+                </div>
+
+                <div class="coatsRadio">
+                  <input class="form-check-input" type="radio" name="coats" id="exampleRadios2" value="2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    2
+                  </label>
+                </div>
+
+                <div class="coatsRadio">
+                  <input class="form-check-input" type="radio" name="coats" id="exampleRadios3" value="3">
+                  <label class="form-check-label" for="exampleRadios3">
+                    3
+                  </label>
                 </div>
               </div>
-
-
-              <!-- radio buttons for coats -->
-              <div id="coats" class="mt-2">
-
-                <div id="coatsSelect" class="form-check">
-                  <div id="coatsLabel">
-                    Coats
-                  </div>
-                  <div class="coatsRadio">
-                    <input class="form-check-input" type="radio" name="coats" id="exampleRadios1" value="1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                      1
-                    </label>
-                  </div>
-
-                  <div class="coatsRadio">
-                    <input class="form-check-input" type="radio" name="coats" id="exampleRadios2" value="2">
-                    <label class="form-check-label" for="exampleRadios2">
-                      2
-                    </label>
-                  </div>
-
-                  <div class="coatsRadio">
-                    <input class="form-check-input" type="radio" name="coats" id="exampleRadios3" value="3">
-                    <label class="form-check-label" for="exampleRadios3">
-                      3
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
+      </div>
+      <!-- walls -->
+      <div class="card py-2">
         <div class='col mx-auto text-center'>
           <!--  WALLS -->
           <h5 class='py-0'><span class='float-left'>+</span>Walls<span class='float-right'>+</span></h5>
@@ -223,24 +225,27 @@
               </div>
               <!--  WALLS END -->
 
-              <!-- WINDOWS AND DOORS -->
-              <small class='text-secondary mx-auto mt-3'>Windows or Doors to exclude</small>
-              <div class="btn btn-danger btn-sm btn-block mt-2" data-toggle="modal" data-target="#winModal"><span
-                  class="float-left">-</span>Windows/Doors<span class="float-right">-</span></div>
-
+              
             </div>
           </form>
         </div>
+        
+      </div>
+      <!-- windows and doors -->
+      <div class="card my-3 p-2">
+        <small class='text-secondary mx-auto py-1'>Windows or Doors to exclude</small>
+        <div class="btn btn-danger btn-sm mx-5" data-toggle="modal" data-target="#winModal"><span
+            class="float-left">-</span>Windows/Doors<span class="float-right">-</span></div>
       </div>
     </div>
   </main>
-
+<!-- footer -->
   <footer class="footer">
     <div class="container text-center text-white">
       <div class="row">
-        <div href="#" id="submitBtn" class="col bg-primary" data-toggle="modal" data-target="#resultModal">Calculate
-        </div>
-        <div href="#" id="clearBtn" class="col bg-secondary">Clear</div>
+        <button href="#" id="submitBtn" class="btn btn-sm col btn-primary m-1" data-toggle="modal" data-target="#resultModal">Calculate
+        </button>
+        <button href="#" id="clearBtn" class="btn btn-sm col btn-secondary m-1">Clear</button>
       </div>
   </footer>
 
