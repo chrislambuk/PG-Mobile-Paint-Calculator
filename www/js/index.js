@@ -18,10 +18,6 @@ function onDeviceReady() {
 
 	document.getElementById('metric').addEventListener('click', function(e) {
 		covId.innerHTML = `m<sup>2</sup>/litre`;
-		covId.style.background = '#E9ECEF';
-		covId.style.color = '#495057';
-		coverage.style.background = '#E9ECEF';
-		coverage.style.color = '#495057';
 		dimArr.forEach(function(dim) {
 			dim.innerText = 'm';
 		});
@@ -32,63 +28,55 @@ function onDeviceReady() {
 
 	// 1. get results
 	function getResults() {
-		// let units = document.querySelector('input[name="xFactor"]:checked').value;
-		const resultFooter = document.getElementById('footer');
-		const height = document.querySelectorAll('.height').value;
-		const pCover = document.getElementById('pCover').value;
+		// let units = document.querySelector('input[name="xFactor"]:checked').value
+		let resultFooter = document.getElementById('footer');
+		let heightArray = document.querySelectorAll('.height');
+		let widthArray = document.querySelectorAll('.width');
+		let winheightArray = document.querySelectorAll('.winHeight');
+		let winwidthArray = document.querySelectorAll('.winWidth');
+		let pCover = document.getElementById('pCover').value;
 
-		if (height !== '' && pCover !== '') {
-			let h1 = document.getElementById('height1'),
-				h2 = document.getElementById('height2'),
-				h3 = document.getElementById('height3'),
-				h4 = document.getElementById('height4'),
-				h5 = document.getElementById('height5'),
-				w1 = document.getElementById('width1'),
-				w2 = document.getElementById('width2'),
-				w3 = document.getElementById('width3'),
-				w4 = document.getElementById('width4'),
-				w5 = document.getElementById('width5');
+		if (heightArray[0] !== '' && pCover !== '') {
+			// calculate areas and sum		
+			let hSum = 0;
+			let wSum = 0;
+			let whSum = 0;
+			let wwSum = 0;
 
-			let winh1 = document.getElementById('winHeight1'),
-				winh2 = document.getElementById('winHeight2'),
-				winh3 = document.getElementById('winHeight3'),
-				winh4 = document.getElementById('winHeight4'),
-				winh5 = document.getElementById('winHeight5'),
-				winw1 = document.getElementById('winWidth1'),
-				winw2 = document.getElementById('winWidth2'),
-				winw3 = document.getElementById('winWidth3'),
-				winw4 = document.getElementById('winWidth4'),
-				winw5 = document.getElementById('winWidth5');
+			// wall totals
+			for (let i = 0; i < heightArray.length; i++) {
+				hSum = hSum + Number(heightArray[i].value);
+			}
+			for (let i = 0; i < widthArray.length; i++) {
+				wSum = wSum + Number(widthArray[i].value);
+			}
+			// window totals
+			for (let i = 0; i < winheightArray.length; i++) {
+				whSum = whSum + Number(winheightArray[i].value);
+			}
+			for (let i = 0; i < winwidthArray.length; i++) {
+				wwSum = wwSum + Number(winwidthArray[i].value);
+			}
+			let wallTotal = hSum * wSum
+			let winTotal = whSum * wwSum
+			let sumTotal =  wallTotal - winTotal
 
-			let wall1 = h1.value * w1.value,
-				wall2 = h2.value * w2.value,
-				wall3 = h3.value * w3.value,
-				wall4 = h4.value * w4.value,
-				wall5 = h5.value * w5.value;
-
-			let win1 = winh1.value * winw1.value,
-				win2 = winh2.value * winw2.value,
-				win3 = winh3.value * winw3.value,
-				win4 = winh4.value * winw4.value,
-				win5 = winh5.value * winw5.value;
-
-			let wallTotal = wall1 + wall2 + wall3 + wall4 + wall5;
-			let winTotal = win1 + win2 + win3 + win4 + win5;
-			// TOTAL
-			let total = wallTotal - winTotal;
+			console.log(wallTotal, winTotal, sumTotal)
 
 			let pCoverInt = parseInt(pCover);
 			// let pCoats = parseInt(document.getElementById('pCoats').value);
+			
 			let pCoats = parseInt(
 				document.querySelector('input[name="coats"]:checked').value
 			);
 			let pCoverage = pCoverInt / pCoats;
-			let finalTotal = Math.ceil(total / pCoverage);
+			let finalTotal = Math.ceil(sumTotal / pCoverage);
+			// draw result
 			let square = document.getElementById('square').innerText;
 			document.getElementById('area').innerHTML = `
 			<div class="pl-5">
 			<small>
-			PAINT AREA: <strong>${total}${square}<sup>2</sup></strong><br>
+			PAINT AREA: <strong>${finalTotal}${square}<sup>2</sup></strong><br>
 			PAINT COATS: <strong>${pCoats}</strong>
 			</small>
 			</div>
@@ -109,36 +97,33 @@ function onDeviceReady() {
 			document.getElementById('resMod').innerHTML = `	
 				<h1>0</h1>
 				`;
-
-			pCover == '' && height == ''
+				pCover == '' && heightArray[0] == ''
 				? (resultFooter.innerText = 'NO DATA!')
 				: (resultFooter.innerText = 'NO COVERAGE DATA!');
 		}
 	}
 
-	// add up all the areas
-	// function inputSum(valArr) {
-	// 	let sum = 0;
-	// 	valArr.forEach(function(arr) {
-	// 		sum += Number(arr.value);
-	// 	});
-	// 	return sum;
-	// }
 
 	// clear button
-	let clearBtn = document.getElementById('clearBtn');
-	clearBtn.addEventListener('click', function() {
-		document.getElementById('myForm').reset();
-		document.getElementById('myForm2').reset();
-		document.getElementById('myForm3').reset();
-		document.getElementById('myForm4').reset();
+			let clearBtn = document.getElementById('clearBtn');
+			clearBtn.addEventListener('click', function() {
+				document.getElementById('myForm').reset();
+				document.getElementById('myForm2').reset();
+				document.getElementById('myForm3').reset();
+				document.getElementById('myForm4').reset();
 	});
-	// Set AdMobAds options:
-	admob.setOptions({
-		publisherId: 'ca-app-pub-8816517022745547/1209512804', // Required
-		// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
-		tappxIdiOS: 'pub-50706-ios-8333', // Optional
-		tappxShare: 0.5 // Optional
-	});
-	admob.createBannerView();
+
+
+
+
+
+
+			// Set AdMobAds options:
+			admob.setOptions({
+				publisherId: 'ca-app-pub-8816517022745547/1209512804', // Required
+				// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
+				tappxIdiOS: 'pub-50706-ios-8333', // Optional
+				tappxShare: 0.5 // Optional
+			});
+			admob.createBannerView();
 }
