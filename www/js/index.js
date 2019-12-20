@@ -37,35 +37,39 @@ function onDeviceReady() {
 		let pCover = document.getElementById('pCover').value;
 
 		if (heightArray[0] !== '' && pCover !== '') {
-			// calculate areas and sum		
+			// calculate areas and sum
 			let hSum = 0;
 			let wSum = 0;
 			let whSum = 0;
 			let wwSum = 0;
+			let wallSum = 0;
+			let winSum = 0;
 
 			// wall totals
 			for (let i = 0; i < heightArray.length; i++) {
-				hSum = hSum + Number(heightArray[i].value);
+				wallSum =
+					wallSum + Number(heightArray[i].value) * Number(widthArray[i].value);
 			}
-			for (let i = 0; i < widthArray.length; i++) {
-				wSum = wSum + Number(widthArray[i].value);
-			}
+			// for (let i = 0; i < widthArray.length; i++) {
+			// 	wSum = wSum + Number(widthArray[i].value);
+			// }
 			// window totals
 			for (let i = 0; i < winheightArray.length; i++) {
-				whSum = whSum + Number(winheightArray[i].value);
+				winSum =
+					winSum +
+					Number(winheightArray[i].value) * Number(winwidthArray[i].value);
 			}
-			for (let i = 0; i < winwidthArray.length; i++) {
-				wwSum = wwSum + Number(winwidthArray[i].value);
-			}
-			let wallTotal = hSum * wSum
-			let winTotal = whSum * wwSum
-			let sumTotal =  wallTotal - winTotal
-
-			console.log(wallTotal, winTotal, sumTotal)
+			// for (let i = 0; i < winwidthArray.length; i++) {
+			// 	wwSum = wwSum + Number(winwidthArray[i].value);
+			// }
+			// let wallTotal = hSum * wSum
+			// let winTotal = whSum * wwSum
+			let sumTotal = wallSum - winSum;
+			console.log(wallSum, winSum, sumTotal);
 
 			let pCoverInt = parseInt(pCover);
 			// let pCoats = parseInt(document.getElementById('pCoats').value);
-			
+
 			let pCoats = parseInt(
 				document.querySelector('input[name="coats"]:checked').value
 			);
@@ -76,7 +80,7 @@ function onDeviceReady() {
 			document.getElementById('area').innerHTML = `
 			<div class="pl-5">
 			<small>
-			PAINT AREA: <strong>${finalTotal}${square}<sup>2</sup></strong><br>
+			PAINT AREA: <strong>${sumTotal}${square}<sup>2</sup></strong><br>
 			PAINT COATS: <strong>${pCoats}</strong>
 			</small>
 			</div>
@@ -97,33 +101,27 @@ function onDeviceReady() {
 			document.getElementById('resMod').innerHTML = `	
 				<h1>0</h1>
 				`;
-				pCover == '' && heightArray[0] == ''
+			pCover == '' && heightArray[0] == ''
 				? (resultFooter.innerText = 'NO DATA!')
 				: (resultFooter.innerText = 'NO COVERAGE DATA!');
 		}
 	}
 
-
 	// clear button
-			let clearBtn = document.getElementById('clearBtn');
-			clearBtn.addEventListener('click', function() {
-				document.getElementById('myForm').reset();
-				document.getElementById('myForm2').reset();
-				document.getElementById('myForm3').reset();
-				document.getElementById('myForm4').reset();
+	let clearBtn = document.getElementById('clearBtn');
+	clearBtn.addEventListener('click', function() {
+		document.getElementById('myForm').reset();
+		document.getElementById('myForm2').reset();
+		document.getElementById('myForm3').reset();
+		document.getElementById('myForm4').reset();
 	});
 
-
-
-
-
-
-			// Set AdMobAds options:
-			admob.setOptions({
-				publisherId: 'ca-app-pub-8816517022745547/1209512804', // Required
-				// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
-				tappxIdiOS: 'pub-50706-ios-8333', // Optional
-				tappxShare: 0.5 // Optional
-			});
-			admob.createBannerView();
+	// Set AdMobAds options:
+	admob.setOptions({
+		publisherId: 'ca-app-pub-8816517022745547/1209512804', // Required
+		// interstitialAdId:     "ca-app-pub-8816517022745547/1209512804",  // Optional
+		tappxIdiOS: 'pub-50706-ios-8333', // Optional
+		tappxShare: 0.5 // Optional
+	});
+	admob.createBannerView();
 }
