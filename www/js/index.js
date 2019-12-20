@@ -65,7 +65,6 @@ function onDeviceReady() {
 			// let wallTotal = hSum * wSum
 			// let winTotal = whSum * wwSum
 			let sumTotal = wallSum - winSum;
-			console.log(wallSum, winSum, sumTotal);
 
 			let pCoverInt = parseInt(pCover);
 			// let pCoats = parseInt(document.getElementById('pCoats').value);
