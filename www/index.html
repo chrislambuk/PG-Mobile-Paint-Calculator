@@ -24,8 +24,8 @@
         <div href="#" class="navbar-brand mx-auto pt-2">
           <h5>Paint Calc</h5>
         </div>
-        <button id="helpBtn" class="navbar-toggler" type="button" data-toggle="modal" data-target="#helpModal">Help
-        </button>
+        <!-- <button id="helpBtn" class="navbar-toggler" type="button" data-toggle="modal" data-target="#helpModal">Help
+        </button> -->
       </div>
     </div>
   </header>
@@ -52,7 +52,7 @@
         </form>
       </div>
       <!-- coverage info -->
-      <div class="card my-1">
+      <div class="card my-2">
         <div class="card-header bg-white text-center pb-0">
           <h6>Paint Info</h6>
         </div>
@@ -233,8 +233,8 @@
       </div>
       <!-- windows and doors -->
       <div class="card mt-2 py-2">
-        <small class='text-secondary mx-auto'>Windows or Doors to exclude</small>
-        <div class="btn btn-danger btn-sm mx-1" data-toggle="modal" data-target="#winModal"><span
+        <small class='text-secondary mx-auto'>Exclude</small>
+        <div class="btn btn-danger btn-sm mx-5" data-toggle="modal" data-target="#winModal"><span
             class="float-left">-</span>Windows/Doors<span class="float-right">-</span></div>
       </div>
     </div>
@@ -243,9 +243,11 @@
   <footer class="footer bg-white">
     <div class="container text-center text-white">
       <div class="row">
-        <button href="#" id="submitBtn" class="btn btn-sm col btn-primary my-1 mr-1" data-toggle="modal" data-target="#resultModal">Calculate
+        <button href="#" id="helpBtn" class="btn btn-sm col btn-outline-danger my-1 mr-1" class="navbar-toggler" type="button" data-toggle="modal" data-target="#helpModal">Help
         </button>
-        <button href="#" id="clearBtn" class="btn btn-sm col btn-secondary my-1 ml-1">Clear</button>
+        <button href="#" id="submitBtn" class="btn btn-sm col-6 btn-primary my-1" data-toggle="modal" type="button" data-target="#resultModal">Calculate
+        </button>
+        <button href="#" id="clearBtn" type="button" class="btn btn-sm col btn-outline-secondary my-1 ml-1">Clear</button>
       </div>
   </footer>
 
