@@ -92,3 +92,14 @@ input[type='number'] {
 #imperial input[type='radio']:checked .input-group-text {
 	background: #424242
 }
+
+@media only screen and (min-width: 768px){
+	#helpBtn{
+		border-radius: 3px 3px 3px 3px;
+		border-left: 1px solid red;
+	}
+	#clearBtn{
+		border-radius: 3px 3px 3px 3px;
+		border-right: 1px solid grey;
+	}
+}
