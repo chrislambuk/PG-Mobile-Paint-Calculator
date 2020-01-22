@@ -15,6 +15,15 @@
     </author>
     <content src="index.html" />
     <gap:plugin name="phonegap-admob" source="npm" />
+    <config-file parent="GADApplicationIdentifier" target="*-Info.plist">
+        <string>ca-app-pub-8816517022745547~1128143402</string>
+    </config-file>
+    <edit-config file="*-Info.plist" mode="merge" target="UIStatusBarHidden">
+        <true />
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="UIViewControllerBasedStatusBarAppearance">
+        <false />
+    </edit-config>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
