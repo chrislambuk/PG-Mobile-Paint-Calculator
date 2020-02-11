@@ -8,13 +8,17 @@
         Chris lamb
     </author>
     <content src="index.html" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
-    <preference name="phonegap-version" value="cli-8.0.0" />
-    <gap:plugin name="phonegap-admob" source="npm"/>
-    	<config-file target="*-Info.plist" parent="GADApplicationIdentifier">
-	<string>ca-app-pub-8816517022745547~1128143402</string>
-    </config-file>
+	<preference name="DisallowOverscroll" value="true" />
+	<preference name="android-minSdkVersion" value="28" />
+	<preference name="phonegap-version" value="cli-9.0.0" />
+<preference name="android-build-tool" value="gradle" />
+<plugin name="cordova-plugin-admobpro">
+<variable name="ADMOB_APP_ID" value="ca-app-pub-8816517022745547~4905295753" />
+<variable name="PLAY_SERVICES_VERSION" value="16.0.0" />
+</plugin>
+
+
+
     <edit-config file="*-Info.plist" mode="merge" target="UIStatusBarHidden">
     <true />
     </edit-config>
