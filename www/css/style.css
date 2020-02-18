@@ -30,6 +30,11 @@ textarea:focus {
 	outline: none !important;
 }
 
+*{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
 h1 {
 	font-size: 5rem !important;
 	font-weight: bolder;
