@@ -5,7 +5,7 @@ html {
 	min-height: 100%;
 }
 body {
-	margin-bottom: 40px; /* Margin bottom by footer height */
+	margin-bottom: 50px; /* Margin bottom by footer height */
 	z-index: 0;
 }
 .footer {
@@ -13,8 +13,10 @@ body {
 	z-index: 10;
 	bottom: 0;
 	width: 100%;
-	height: 40px; /* Set the fixed height of the footer here */
+	height: 50px; /* Set the fixed height of the footer here */
 	line-height: 40px; /* Vertically center the text there */
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 3px solid RGBA(218, 48, 72, 1.00);
 	/* background-color: #f5f5f5; */
 	margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
 	margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
