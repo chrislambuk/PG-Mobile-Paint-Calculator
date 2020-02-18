@@ -101,6 +101,14 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "co.uk.arqmedia.paintcalculator"
+        },
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.arqmedia.paintcalc"
+        },
+        "cordova-plugin-admobpro": {
+            "ADMOB_APP_ID": "ca-app-pub-8816517022745547~4905295753",
+            "PLAY_SERVICES_VERSION": "16.0.0",
+            "PACKAGE_NAME": "com.arqmedia.paintcalc"
         }
     },
     "dependent_plugins": {},
@@ -707,6 +715,14 @@
                 "navigator.notification",
                 "navigator"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+            "id": "cordova-plugin-admobpro.AdMob",
+            "pluginId": "cordova-plugin-admobpro",
+            "clobbers": [
+                "window.AdMob"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -729,6 +745,8 @@
         "cordova-plugin-splashscreen": "3.2.2",
         "cordova-plugin-statusbar": "2.1.3",
         "cordova-plugin-vibration": "2.1.6",
-        "cordova-plugin-whitelist": "1.2.2"
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-extension": "1.5.4",
+        "cordova-plugin-admobpro": "2.49.0"
     }
 }
