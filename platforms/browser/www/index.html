@@ -30,7 +30,7 @@
     </div>
   </header>
 
-  <main class="bg-light">
+  <main class="bg-light col-md-8 mx-auto">
     <div class="container">
       <!-- metric or imperial -->
       <div class="card">
@@ -243,13 +243,30 @@
   <footer class="footer bg-white">
     <div class="container text-center text-white">
       <div class="row">
-        <button href="#" id="helpBtn" class="btn btn-sm col btn-white m-2 shadow-none" class="navbar-toggler" type="button" data-toggle="modal" data-target="#helpModal">Help
+        <button href="#" id="helpBtn" class="btn btn-sm col btn-white m-2 shadow-none" class="navbar-toggler" data-toggle="modal" data-target="#helpModal">Help
         </button>
-        <button href="#" id="submitBtn" class="btn btn-sm col btn-white m-2 shadow-none" data-toggle="modal" type="button" data-target="#resultModal">Calculate
+        <button href="#" id="submitBtn" class="btn btn-sm col btn-white m-2 shadow-none" data-toggle="modal" data-target="#resultModal">Calculate
         </button>
-        <button href="#" id="clearBtn" type="button" class="btn btn-sm col btn-white m-2 shadow-none">Clear</button>
+        <button href="#" id="clearBtn" class="btn btn-sm col btn-white m-2 shadow-none" data-toggle="modal" data-target="#clearModal">Clear</button>
       </div>
   </footer>
+
+    <!-- CLEAR MODAL -->
+    <div class="modal fade mt-5" id="clearModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header py-2">
+            <h5 class="modal-title mx-auto" id="exampleModalLabel">CLEAR</h5>
+          </div>
+          <div class="modal-body bg-light py-2">
+            <div class="alert alert-danger text-center shadow-sm">INPUT DATA CLEARED</div>
+          </div>
+          <div class="modal-footer py-2">
+            <button type="button" class="btn btn-white btn-block btn-sm" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- HELP MODAL -->
   <div class="modal fade mt-5" id="helpModal">
@@ -265,12 +282,12 @@
           <small>
             <ul>
               <li>
-  Choose between metric (metres & litres) or imperial (feet & gallons).
+                Choose metric or imperial measurements.
               </li>
-              <li class="my-2">Add wall dimensions.</li>
-              <li class="my-2">Add dimensions for windows and doors you aren’t painting by clicking on <button
+              <li class="my-2">Input the wall dimensions.</li>
+              <li class="my-2">Input the dimensions for windows and doors you aren’t painting by clicking on <button
                   class="btn btn-sm btn-danger py-0 px-1">Windows/Doors</button></li>
-              <li>Click Calculate</li>
+              <li>Click <strong>Calculate</strong></li>
             </ul>
           </small>
           <small>Paint coverage information can be obtained from the manufacturer or the paint container. The calculated result is an estimate so please
@@ -319,6 +336,8 @@
       </div>
     </div>
   </div>
+
+
 
   <!-- WINDOWS MODAL -->
   <div class="modal fade mt-5" id="winModal">
@@ -459,8 +478,6 @@
               </div>
             </div>
           </form>
-
-
         </div>
         <div class="modal-footer bg-white py-1">
           <button type="button" class="btn btn-white btn-block btn-sm" data-dismiss="modal">Close</button>
@@ -475,11 +492,20 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
-  <!-- <script>
-    $(window).on('load', function () {
-      $('#helpModal').modal('show');
-    });
-  </script> -->
+  <script>
+    // $(window).on('load', function () {
+    //   $('#helpModal').modal('show');
+    // });
+    $(function () {
+		$('#clearModal').on('show.bs.modal', function () {
+			var myModal = $(this);
+			clearTimeout(myModal.data('hideInterval'));
+			myModal.data('hideInterval', setTimeout(function () {
+				myModal.modal('hide');
+			}, 3000));
+		});
+	});
+  </script>
 </body>
 
 </html>
