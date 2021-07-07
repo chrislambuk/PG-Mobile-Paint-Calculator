@@ -14,13 +14,12 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/sticky-footer.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
   <title>Paint Calc</title>
 </head>
 
 <body class="bg-light">
   <header>
-    <div class="navbar navbar-dark bg-dark fixed-top pt-4">
+    <div class="navbar navbar-dark bg-dark pt-4">
       <div class="container">
         <a href="#" class="navbar-brand mx-auto pt-2">
           <h5>Paint Calc</h5>
@@ -33,32 +32,71 @@
 
   <main>
     <div class="container">
+      <form id="myForm4" class="py-1">
+        <div id="unitSelect">
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="xFactor" id="metric" value="1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Metric
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="xFactor" id="imperial" value="2">
+            <label class="form-check-label" for="exampleRadios2">
+              Imperial
+            </label>
+          </div>
+
+        </div>
+      </form>
       <div class="mx-auto">
         <!-- COVERAGE INFO -->
         <div class="card mb-3">
           <div class="card-header text-center bg-white pb-0">
             <h5>Paint Info</h5>
           </div>
-          <div class='card-body bg-warning p-2'>
+          <div class='card-body bg-warning p-2' id="paintInfoBG">
             <form id="myForm3">
-              <div class="input-group input-group-sm">
+              <div class="input-group">
                 <div class="input-group-prepend">
-                  <div class="input-group-text">Coverage</div>
+                  <div class="input-group-text" id="coverage">Coverage</div>
                 </div>
                 <input type="number" class="form-control" id="pCover" placeholder='...'>
                 <div class="input-group-append">
-                  <span class="input-group-text">m<sup>2</sup>/litre</span>
+                  <span id="covId" class="input-group-text">m<sup>2</sup>/litre</span>
                 </div>
               </div>
-              <div class="input-group input-group-sm my-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Coats</div>
+
+
+              <!-- radio buttons for coats -->
+              <div id="coats" class="mt-2">
+
+                <div id="coatsSelect" class="form-check">
+                  <div id="coatsLabel">
+                    Coats
+                  </div>
+                  <div class="coatsRadio">
+                    <input class="form-check-input" type="radio" name="coats" id="exampleRadios1" value="1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                      1
+                    </label>
+                  </div>
+
+                  <div class="coatsRadio">
+                    <input class="form-check-input" type="radio" name="coats" id="exampleRadios2" value="2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      2
+                    </label>
+                  </div>
+
+                  <div class="coatsRadio">
+                    <input class="form-check-input" type="radio" name="coats" id="exampleRadios3" value="3">
+                    <label class="form-check-label" for="exampleRadios3">
+                      3
+                    </label>
+                  </div>
                 </div>
-                <select class="custom-select" id="pCoats">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
               </div>
             </form>
           </div>
@@ -74,9 +112,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="number" class="form-control height" id="height1">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div id="square" class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -85,9 +123,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="number" class="form-control width" id="width1">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -97,9 +135,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="number" class="form-control height" id="height2">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -108,9 +146,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="number" class="form-control width" id="width2">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -120,9 +158,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="number" class="form-control height" id="height3">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -131,9 +169,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="number" class="form-control width" id="width3">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -143,9 +181,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="number" class="form-control height" id="height4">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -154,9 +192,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="number" class="form-control width" id="width4">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -166,9 +204,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control height">
+                  <input type="number" class="form-control height" id="height5">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -177,9 +215,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control width">
+                  <input type="number" class="form-control width" id="width5">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -217,20 +255,22 @@
           </button>
         </div>
         <div class="modal-body bg-light">
-          <small>Paint Calc is designed to calculate the amount of paint required for painting walls.
-            It will deduct any window or door measurements you input.</small>
+          <small>Paint Calc is designed to calculate the amount of paint required for decorating.<br>
+            You can choose between metric (metres/litres) or imperial (feet/gallons).
+          </small>
           <br>
           <br>
           <small>
-            <ol>
-              <li>Input <strong>Width</strong> and <strong>Height</strong> measurement for each wall.</li>
-              <li>Input window or door measurements using the red button.</li>
-              <li>Click calculate.</li>
-            </ol>
+            <ul>
+              <li>Measure the walls you are painting</li>
+              <li class="my-2">Add windows and door measurements you aren’t painting by clicking on <button
+                  class="btn btn-sm btn-danger py-0 px-1">Windows/Doors</button></li>
+              <li>Click <button class="btn btn-sm btn-primary py-0 px-1">Calculate</button></li>
+            </ul>
           </small>
-          <small>All measurements should be in metres.</small>
-          <small>Paint coverage information can be obtained from the manufacturer or the paint container.
-            This is an estimate. Please confirm quantities with your supplier before purchasing.</small>
+          <small>Paint coverage information can be obtained from the manufacturer or the paint container. either
+            m<sup>2</sup>/litre or ft<sup>2</sup>/gallon depending on your region. The result is an estimate. Please
+            confirm quantities with your supplier before purchasing.</small>
           <br>
         </div>
         <div class="modal-footer py-2">
@@ -259,6 +299,7 @@
         </div>
         <div class="modal-body bg-light px-4">
           <!--  -->
+          <div id="area"></div>
           <div class='text-center shadow-sm mx-5'>
             <div class="bg-white text-black">
               <p id="resMod"></p>
@@ -295,9 +336,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control win-height">
+                  <input type="number" class="form-control win-height" id="winHeight1">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -306,9 +347,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control win-width">
+                  <input type="number" class="form-control win-width" id="winWidth1">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -320,9 +361,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control win-height">
+                  <input type="number" class="form-control win-height" id="winHeight2">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -331,9 +372,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control win-width">
+                  <input type="number" class="form-control win-width" id="winWidth2">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -345,9 +386,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control win-height">
+                  <input type="number" class="form-control win-height" id="winHeight3">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -356,9 +397,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control win-width">
+                  <input type="number" class="form-control win-width" id="winWidth3">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -370,9 +411,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control win-height">
+                  <input type="number" class="form-control win-height" id="winHeight4">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -381,9 +422,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control win-width">
+                  <input type="number" class="form-control win-width" id="winWidth4">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -395,9 +436,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Height</div>
                   </div>
-                  <input type="number" class="form-control win-height">
+                  <input type="number" class="form-control win-height" id="winHeight5">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -406,9 +447,9 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Width</div>
                   </div>
-                  <input type="number" class="form-control win-width">
+                  <input type="number" class="form-control win-width" id="winWidth5">
                   <div class="input-group-append">
-                    <div class="input-group-text">m</div>
+                    <div class="input-group-text dimension">m</div>
                   </div>
                 </div>
               </div>
@@ -431,9 +472,9 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script>
-    $(window).on('load', function () {
-      $('#helpModal').modal('show');
-    });
+    // $(window).on('load', function () {
+    //   $('#helpModal').modal('show');
+    // });
     // $(document).on('focus', 'select, input, textarea', function () {
     //     $('#main-headerbar').css({'position': 'absolute', 'top': '0px' });
     // });

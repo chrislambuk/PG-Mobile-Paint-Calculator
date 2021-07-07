@@ -1,10 +1,10 @@
 body {
 	padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
 	padding-top: env(safe-area-inset-top); /* iOS 11.2 */
-	}
-	
+}
+
 main {
-	margin-top: 80px;
+	/* margin-top: 80px; */
 	cursor: pointer;
 }
 
@@ -32,11 +32,52 @@ h1 {
 	border: none;
 }
 
+#unitSelect {
+	display: flex;
+	justify-content: space-evenly;
+}
+#covId{
+	width:100px;
+}
+.dimension{
+	width: 35px;
+}
+
+#coats {
+	padding: 3px 0;
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+	background: white;
+}
+
+#coatsSelect {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#coatsLabel {
+	flex: 2;
+}
+
+.coatsRadio {
+	flex: 1;
+}
+
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
 
+input[type='number'] {
+	-moz-appearance: textfield;
+}
 
 
+#metric input[type='radio']:checked .input-group-text{
+	background: #E9ECEF;
+}
+#imperial input[type='radio']:checked .input-group-text {
+	background: #424242
+}
